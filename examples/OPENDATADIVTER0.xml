@@ -1,0 +1,1909 @@
+<feed xml:base="http://bcnodata.cloudapp.net:8080/v1/Data/" xmlns="http://www.w3.org/2005/Atom" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+  <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0</id>
+  <title type="text">OPENDATADIVTER0</title>
+  <updated>2015-02-27T18:40:21Z</updated>
+  <link rel="self" title="OPENDATADIVTER0" href="OPENDATADIVTER0" />
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A23.1723788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='0045a575-de2a-47c3-9afd-18a38e9515a4',RowKey='094ca0b3-6832-49de-93d2-b3a2de4314f9')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='0045a575-de2a-47c3-9afd-18a38e9515a4',RowKey='094ca0b3-6832-49de-93d2-b3a2de4314f9')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>0045a575-de2a-47c3-9afd-18a38e9515a4</d:PartitionKey>
+        <d:RowKey>094ca0b3-6832-49de-93d2-b3a2de4314f9</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:23.1723788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">0045a575-de2a-47c3-9afd-18a38e9515a4</d:entityid>
+        <d:codi_divisio_territorial>B-67</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Vila Olímpica del Poblenou</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri67.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.1512511Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='06014456-984d-4b02-b9a1-2826da934026',RowKey='7659c07c-59ea-4a93-a082-b6dd9f779acb')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='06014456-984d-4b02-b9a1-2826da934026',RowKey='7659c07c-59ea-4a93-a082-b6dd9f779acb')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>06014456-984d-4b02-b9a1-2826da934026</d:PartitionKey>
+        <d:RowKey>7659c07c-59ea-4a93-a082-b6dd9f779acb</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.1512511Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">06014456-984d-4b02-b9a1-2826da934026</d:entityid>
+        <d:codi_divisio_territorial>B-22</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Vallvidrera, el Tibidabo i les Planes</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-05</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri22.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.0192379Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='07304c6e-5038-4c97-bd46-523f50085499',RowKey='b2e8d05b-75eb-415f-84f7-effc643b6267')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='07304c6e-5038-4c97-bd46-523f50085499',RowKey='b2e8d05b-75eb-415f-84f7-effc643b6267')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>07304c6e-5038-4c97-bd46-523f50085499</d:PartitionKey>
+        <d:RowKey>b2e8d05b-75eb-415f-84f7-effc643b6267</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.0192379Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">07304c6e-5038-4c97-bd46-523f50085499</d:entityid>
+        <d:codi_divisio_territorial>B-19</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>les Corts</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-04</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri19.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.0763788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='0a678c16-d28d-4b01-bc18-212778fc306a',RowKey='57505d51-62f3-41e2-95ad-d9b8a39013d8')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='0a678c16-d28d-4b01-bc18-212778fc306a',RowKey='57505d51-62f3-41e2-95ad-d9b8a39013d8')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>0a678c16-d28d-4b01-bc18-212778fc306a</d:PartitionKey>
+        <d:RowKey>57505d51-62f3-41e2-95ad-d9b8a39013d8</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.0763788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">0a678c16-d28d-4b01-bc18-212778fc306a</d:entityid>
+        <d:codi_divisio_territorial>B-34</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Can Baró</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri34.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.6343788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='0ab54ad5-eef0-4c75-8b6f-d50a7c4bb194',RowKey='09ab9190-6117-4bf5-be1e-73e07fa95f62')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='0ab54ad5-eef0-4c75-8b6f-d50a7c4bb194',RowKey='09ab9190-6117-4bf5-be1e-73e07fa95f62')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>0ab54ad5-eef0-4c75-8b6f-d50a7c4bb194</d:PartitionKey>
+        <d:RowKey>09ab9190-6117-4bf5-be1e-73e07fa95f62</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.6343788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">0ab54ad5-eef0-4c75-8b6f-d50a7c4bb194</d:entityid>
+        <d:codi_divisio_territorial>B-15</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Hostafrancs</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-03</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri15.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.2123788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='0cf5c098-c056-4566-bf13-738e726818d2',RowKey='5e88bf9d-4cfc-4078-b7f2-9f8b57f9515f')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='0cf5c098-c056-4566-bf13-738e726818d2',RowKey='5e88bf9d-4cfc-4078-b7f2-9f8b57f9515f')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>0cf5c098-c056-4566-bf13-738e726818d2</d:PartitionKey>
+        <d:RowKey>5e88bf9d-4cfc-4078-b7f2-9f8b57f9515f</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.2123788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">0cf5c098-c056-4566-bf13-738e726818d2</d:entityid>
+        <d:codi_divisio_territorial>B-33</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Baix Guinardó</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri33.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.6544014Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='0d3799a0-08d0-4205-819a-d1893d9f4885',RowKey='6dff8a59-56d2-41df-8f0c-62fb1932dbf1')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='0d3799a0-08d0-4205-819a-d1893d9f4885',RowKey='6dff8a59-56d2-41df-8f0c-62fb1932dbf1')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>0d3799a0-08d0-4205-819a-d1893d9f4885</d:PartitionKey>
+        <d:RowKey>6dff8a59-56d2-41df-8f0c-62fb1932dbf1</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.6544014Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">0d3799a0-08d0-4205-819a-d1893d9f4885</d:entityid>
+        <d:codi_divisio_territorial>B-32</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Camp d en Grassot i Gràcia Nova</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-06</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri32.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A23.3273788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='1136647c-57a4-4348-8e61-9472d48e4577',RowKey='624b5498-9f5f-44a6-87bb-4bb82266e239')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='1136647c-57a4-4348-8e61-9472d48e4577',RowKey='624b5498-9f5f-44a6-87bb-4bb82266e239')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>1136647c-57a4-4348-8e61-9472d48e4577</d:PartitionKey>
+        <d:RowKey>624b5498-9f5f-44a6-87bb-4bb82266e239</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:23.3273788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">1136647c-57a4-4348-8e61-9472d48e4577</d:entityid>
+        <d:codi_divisio_territorial>B-73</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Verneda i la Pau</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri73.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.4243788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='17f15744-15c5-4914-b402-fd0bf516c285',RowKey='559c2fc5-0738-4ba7-a145-a456f28c4d3f')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='17f15744-15c5-4914-b402-fd0bf516c285',RowKey='559c2fc5-0738-4ba7-a145-a456f28c4d3f')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>17f15744-15c5-4914-b402-fd0bf516c285</d:PartitionKey>
+        <d:RowKey>559c2fc5-0738-4ba7-a145-a456f28c4d3f</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.4243788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">17f15744-15c5-4914-b402-fd0bf516c285</d:entityid>
+        <d:codi_divisio_territorial>B-48</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Guineueta</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri48.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A24.5227882Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='1d431432-e298-4827-b8b7-c87745ccaec4',RowKey='7ecd53cd-79c3-4c49-8439-7325dbc37685')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='1d431432-e298-4827-b8b7-c87745ccaec4',RowKey='7ecd53cd-79c3-4c49-8439-7325dbc37685')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>1d431432-e298-4827-b8b7-c87745ccaec4</d:PartitionKey>
+        <d:RowKey>7ecd53cd-79c3-4c49-8439-7325dbc37685</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:24.5227882Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">1d431432-e298-4827-b8b7-c87745ccaec4</d:entityid>
+        <d:codi_divisio_territorial>B-64</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Camp de l Arpa del Clot</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri64.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.5363788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='2171b698-903c-43c9-8675-950d879be876',RowKey='b231e112-a7d8-4491-8ae6-3e58e6a769e5')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='2171b698-903c-43c9-8675-950d879be876',RowKey='b231e112-a7d8-4491-8ae6-3e58e6a769e5')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>2171b698-903c-43c9-8675-950d879be876</d:PartitionKey>
+        <d:RowKey>b231e112-a7d8-4491-8ae6-3e58e6a769e5</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.5363788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">2171b698-903c-43c9-8675-950d879be876</d:entityid>
+        <d:codi_divisio_territorial>B-58</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Baró de Viver</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-09</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri58.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.6243788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='221d8d11-07df-494a-b282-700de60a11c1',RowKey='1b3006db-4420-40a7-bc1a-97e264dbda9b')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='221d8d11-07df-494a-b282-700de60a11c1',RowKey='1b3006db-4420-40a7-bc1a-97e264dbda9b')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>221d8d11-07df-494a-b282-700de60a11c1</d:PartitionKey>
+        <d:RowKey>1b3006db-4420-40a7-bc1a-97e264dbda9b</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.6243788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">221d8d11-07df-494a-b282-700de60a11c1</d:entityid>
+        <d:codi_divisio_territorial>B-47</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Can Peguera</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri47.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.0543414Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='22421aea-063a-43e1-ad8e-7f61afa83093',RowKey='95acbdf9-2a04-44a8-be0a-f4fb0ba1a857')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='22421aea-063a-43e1-ad8e-7f61afa83093',RowKey='95acbdf9-2a04-44a8-be0a-f4fb0ba1a857')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>22421aea-063a-43e1-ad8e-7f61afa83093</d:PartitionKey>
+        <d:RowKey>95acbdf9-2a04-44a8-be0a-f4fb0ba1a857</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.0543414Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">22421aea-063a-43e1-ad8e-7f61afa83093</d:entityid>
+        <d:codi_divisio_territorial>B-26</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Gervasi - Galvany</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-05</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri26.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A15.8583788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='2eb131ce-fbeb-4249-90df-88ddfd0d5c0a',RowKey='1244a5c9-d8bd-4809-ade0-b9353608851d')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='2eb131ce-fbeb-4249-90df-88ddfd0d5c0a',RowKey='1244a5c9-d8bd-4809-ade0-b9353608851d')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>2eb131ce-fbeb-4249-90df-88ddfd0d5c0a</d:PartitionKey>
+        <d:RowKey>1244a5c9-d8bd-4809-ade0-b9353608851d</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:15.8583788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">2eb131ce-fbeb-4249-90df-88ddfd0d5c0a</d:entityid>
+        <d:codi_divisio_territorial>D-09</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Andreu</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A22.9333788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='3249c8df-8565-4ce1-a364-792f66b31cdb',RowKey='03021d72-0d1c-4aeb-a6f9-51d74c0a356d')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='3249c8df-8565-4ce1-a364-792f66b31cdb',RowKey='03021d72-0d1c-4aeb-a6f9-51d74c0a356d')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>3249c8df-8565-4ce1-a364-792f66b31cdb</d:PartitionKey>
+        <d:RowKey>03021d72-0d1c-4aeb-a6f9-51d74c0a356d</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:22.9333788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">3249c8df-8565-4ce1-a364-792f66b31cdb</d:entityid>
+        <d:codi_divisio_territorial>B-66</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Parc i la Llacuna del Poblenou</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri66.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A22.1853788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='3a7f3721-a86a-4b3b-880a-6e1ebaebcf5c',RowKey='c01369b6-0656-4566-9add-428b51024f05')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='3a7f3721-a86a-4b3b-880a-6e1ebaebcf5c',RowKey='c01369b6-0656-4566-9add-428b51024f05')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>3a7f3721-a86a-4b3b-880a-6e1ebaebcf5c</d:PartitionKey>
+        <d:RowKey>c01369b6-0656-4566-9add-428b51024f05</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:22.1853788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">3a7f3721-a86a-4b3b-880a-6e1ebaebcf5c</d:entityid>
+        <d:codi_divisio_territorial>B-60</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Andreu</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-09</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri60.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.8692229Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='3ac1ef80-d6df-44a6-8168-f67c7dd4c762',RowKey='37fbf853-80f8-42b4-a8a8-d1a1e0aede75')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='3ac1ef80-d6df-44a6-8168-f67c7dd4c762',RowKey='37fbf853-80f8-42b4-a8a8-d1a1e0aede75')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>3ac1ef80-d6df-44a6-8168-f67c7dd4c762</d:PartitionKey>
+        <d:RowKey>37fbf853-80f8-42b4-a8a8-d1a1e0aede75</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.8692229Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">3ac1ef80-d6df-44a6-8168-f67c7dd4c762</d:entityid>
+        <d:codi_divisio_territorial>B-16</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Bordeta</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-03</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri16.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A21.9425302Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='3cc1acff-2d6a-485a-9f54-d8bdd72dc8a8',RowKey='afb03d86-1d1a-4b8f-82e5-badf72472b0e')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='3cc1acff-2d6a-485a-9f54-d8bdd72dc8a8',RowKey='afb03d86-1d1a-4b8f-82e5-badf72472b0e')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>3cc1acff-2d6a-485a-9f54-d8bdd72dc8a8</d:PartitionKey>
+        <d:RowKey>afb03d86-1d1a-4b8f-82e5-badf72472b0e</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:21.9425302Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">3cc1acff-2d6a-485a-9f54-d8bdd72dc8a8</d:entityid>
+        <d:codi_divisio_territorial>B-44</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Vilapicina i la Torre Llobeta</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri44.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.5243788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='3f6bb310-77d6-4a52-96dc-05ece13077d2',RowKey='cc14aa39-84c5-4120-8653-5f5fbd7cc738')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='3f6bb310-77d6-4a52-96dc-05ece13077d2',RowKey='cc14aa39-84c5-4120-8653-5f5fbd7cc738')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>3f6bb310-77d6-4a52-96dc-05ece13077d2</d:PartitionKey>
+        <d:RowKey>cc14aa39-84c5-4120-8653-5f5fbd7cc738</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.5243788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">3f6bb310-77d6-4a52-96dc-05ece13077d2</d:entityid>
+        <d:codi_divisio_territorial>B-12</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Marina del Prat Vermell - Zona Franca</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-03</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri12.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.7853788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='40fb873f-819f-4d6a-ad79-12014238fc43',RowKey='e027400f-2740-4239-b0ba-9056e571c884')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='40fb873f-819f-4d6a-ad79-12014238fc43',RowKey='e027400f-2740-4239-b0ba-9056e571c884')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>40fb873f-819f-4d6a-ad79-12014238fc43</d:PartitionKey>
+        <d:RowKey>e027400f-2740-4239-b0ba-9056e571c884</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.7853788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">40fb873f-819f-4d6a-ad79-12014238fc43</d:entityid>
+        <d:codi_divisio_territorial>B-51</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Verdun</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri51.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A21.2054565Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='4105ae64-84c9-4a27-988c-d8eb6729d0f4',RowKey='80807b2f-c920-4327-be36-e07e9c6f97a5')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='4105ae64-84c9-4a27-988c-d8eb6729d0f4',RowKey='80807b2f-c920-4327-be36-e07e9c6f97a5')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>4105ae64-84c9-4a27-988c-d8eb6729d0f4</d:PartitionKey>
+        <d:RowKey>80807b2f-c920-4327-be36-e07e9c6f97a5</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:21.2054565Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">4105ae64-84c9-4a27-988c-d8eb6729d0f4</d:entityid>
+        <d:codi_divisio_territorial>B-43</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Horta</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri43.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A24.9338293Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='4487d4c3-7dd3-4635-b0cd-9ef324613025',RowKey='b2af05de-0333-472b-bb1d-2de3b5c0099b')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='4487d4c3-7dd3-4635-b0cd-9ef324613025',RowKey='b2af05de-0333-472b-bb1d-2de3b5c0099b')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>4487d4c3-7dd3-4635-b0cd-9ef324613025</d:PartitionKey>
+        <d:RowKey>b2af05de-0333-472b-bb1d-2de3b5c0099b</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:24.9338293Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">4487d4c3-7dd3-4635-b0cd-9ef324613025</d:entityid>
+        <d:codi_divisio_territorial>B-68</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Poblenou</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri68.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A16.5643788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='537bccc5-e247-4a3d-a134-f93591b062f3',RowKey='60ffcdfa-7718-41e8-92cc-d2613f7e4846')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='537bccc5-e247-4a3d-a134-f93591b062f3',RowKey='60ffcdfa-7718-41e8-92cc-d2613f7e4846')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>537bccc5-e247-4a3d-a134-f93591b062f3</d:PartitionKey>
+        <d:RowKey>60ffcdfa-7718-41e8-92cc-d2613f7e4846</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:16.5643788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">537bccc5-e247-4a3d-a134-f93591b062f3</d:entityid>
+        <d:codi_divisio_territorial>B-07</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Dreta de l Eixample</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-02</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri7.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.7823788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='54d7eee2-215e-4d8b-83b1-9ac97e3ae268',RowKey='69dff4b2-1427-41f1-846a-192f37491d00')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='54d7eee2-215e-4d8b-83b1-9ac97e3ae268',RowKey='69dff4b2-1427-41f1-846a-192f37491d00')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>54d7eee2-215e-4d8b-83b1-9ac97e3ae268</d:PartitionKey>
+        <d:RowKey>69dff4b2-1427-41f1-846a-192f37491d00</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.7823788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">54d7eee2-215e-4d8b-83b1-9ac97e3ae268</d:entityid>
+        <d:codi_divisio_territorial>B-18</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sants</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-03</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri18.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A21.34047Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='565518c4-28ee-49e8-8b17-aaae805f61b7',RowKey='8a605424-db57-441b-aba7-49a9ad1c5bdd')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='565518c4-28ee-49e8-8b17-aaae805f61b7',RowKey='8a605424-db57-441b-aba7-49a9ad1c5bdd')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>565518c4-28ee-49e8-8b17-aaae805f61b7</d:PartitionKey>
+        <d:RowKey>8a605424-db57-441b-aba7-49a9ad1c5bdd</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:21.34047Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">565518c4-28ee-49e8-8b17-aaae805f61b7</d:entityid>
+        <d:codi_divisio_territorial>B-49</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Canyelles</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri49.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A23.7877147Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='56c044e4-0e99-4864-9e92-0320b6a2c594',RowKey='0fc20e64-cb9d-4726-8777-883320642cf3')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='56c044e4-0e99-4864-9e92-0320b6a2c594',RowKey='0fc20e64-cb9d-4726-8777-883320642cf3')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>56c044e4-0e99-4864-9e92-0320b6a2c594</d:PartitionKey>
+        <d:RowKey>0fc20e64-cb9d-4726-8777-883320642cf3</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:23.7877147Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">56c044e4-0e99-4864-9e92-0320b6a2c594</d:entityid>
+        <d:codi_divisio_territorial>B-59</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Bon Pastor</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-09</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri59.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.650201Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='583fbf40-a20e-4535-9a59-fdf87861cd26',RowKey='dfd6b989-5dfb-4bcf-96c0-49891cac6e17')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='583fbf40-a20e-4535-9a59-fdf87861cd26',RowKey='dfd6b989-5dfb-4bcf-96c0-49891cac6e17')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>583fbf40-a20e-4535-9a59-fdf87861cd26</d:PartitionKey>
+        <d:RowKey>dfd6b989-5dfb-4bcf-96c0-49891cac6e17</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.650201Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">583fbf40-a20e-4535-9a59-fdf87861cd26</d:entityid>
+        <d:codi_divisio_territorial>B-13</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Marina de Port</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-03</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri13.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A15.7523788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='589f2c83-1069-4228-9f45-9cc7a5b8328d',RowKey='0ddd88c6-5c75-4793-b169-55a806c091c9')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='589f2c83-1069-4228-9f45-9cc7a5b8328d',RowKey='0ddd88c6-5c75-4793-b169-55a806c091c9')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>589f2c83-1069-4228-9f45-9cc7a5b8328d</d:PartitionKey>
+        <d:RowKey>0ddd88c6-5c75-4793-b169-55a806c091c9</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:15.7523788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">589f2c83-1069-4228-9f45-9cc7a5b8328d</d:entityid>
+        <d:codi_divisio_territorial>D-08</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Nou barris</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.2063788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='61e86ab3-3824-4e35-b364-24c1082de8a6',RowKey='0f5c3639-3b2e-4352-b100-d263e6ffc12d')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='61e86ab3-3824-4e35-b364-24c1082de8a6',RowKey='0f5c3639-3b2e-4352-b100-d263e6ffc12d')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>61e86ab3-3824-4e35-b364-24c1082de8a6</d:PartitionKey>
+        <d:RowKey>0f5c3639-3b2e-4352-b100-d263e6ffc12d</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.2063788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">61e86ab3-3824-4e35-b364-24c1082de8a6</d:entityid>
+        <d:codi_divisio_territorial>B-56</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Vallbona</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri56.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A24.7058065Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='63116f2a-4b15-4f2c-ba08-1a4afeb60111',RowKey='4e02aa0f-0a71-45f4-a266-535210f1c96c')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='63116f2a-4b15-4f2c-ba08-1a4afeb60111',RowKey='4e02aa0f-0a71-45f4-a266-535210f1c96c')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>63116f2a-4b15-4f2c-ba08-1a4afeb60111</d:PartitionKey>
+        <d:RowKey>4e02aa0f-0a71-45f4-a266-535210f1c96c</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:24.7058065Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">63116f2a-4b15-4f2c-ba08-1a4afeb60111</d:entityid>
+        <d:codi_divisio_territorial>B-70</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Besòs i el Maresme</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri70.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A15.6923788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='69c23496-bd4c-4dc4-91cf-82a6805c78d3',RowKey='aeb86c5f-0ab2-4020-bb3b-3672af757186')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='69c23496-bd4c-4dc4-91cf-82a6805c78d3',RowKey='aeb86c5f-0ab2-4020-bb3b-3672af757186')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>69c23496-bd4c-4dc4-91cf-82a6805c78d3</d:PartitionKey>
+        <d:RowKey>aeb86c5f-0ab2-4020-bb3b-3672af757186</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:15.6923788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">69c23496-bd4c-4dc4-91cf-82a6805c78d3</d:entityid>
+        <d:codi_divisio_territorial>D-06</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Gracia</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A21.4774837Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='6d3e0edd-e50b-497a-86de-b5c4469c0695',RowKey='7f26af18-2a38-4515-a242-e204cb7e7989')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='6d3e0edd-e50b-497a-86de-b5c4469c0695',RowKey='7f26af18-2a38-4515-a242-e204cb7e7989')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>6d3e0edd-e50b-497a-86de-b5c4469c0695</d:PartitionKey>
+        <d:RowKey>7f26af18-2a38-4515-a242-e204cb7e7989</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:21.4774837Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">6d3e0edd-e50b-497a-86de-b5c4469c0695</d:entityid>
+        <d:codi_divisio_territorial>B-52</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Prosperitat</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri52.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.5123788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='6dfc331b-feec-4f9b-96d2-a0e50cc3d596',RowKey='2fce9174-cb24-4130-a9ff-a3dcb6f14ac5')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='6dfc331b-feec-4f9b-96d2-a0e50cc3d596',RowKey='2fce9174-cb24-4130-a9ff-a3dcb6f14ac5')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>6dfc331b-feec-4f9b-96d2-a0e50cc3d596</d:PartitionKey>
+        <d:RowKey>2fce9174-cb24-4130-a9ff-a3dcb6f14ac5</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.5123788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">6dfc331b-feec-4f9b-96d2-a0e50cc3d596</d:entityid>
+        <d:codi_divisio_territorial>B-45</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Porta</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri45.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.3813788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='705adebb-ea8c-4d4b-b762-fa2ea6bcd99e',RowKey='da1d5759-1e57-4b76-998c-442486c7aabd')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='705adebb-ea8c-4d4b-b762-fa2ea6bcd99e',RowKey='da1d5759-1e57-4b76-998c-442486c7aabd')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>705adebb-ea8c-4d4b-b762-fa2ea6bcd99e</d:PartitionKey>
+        <d:RowKey>da1d5759-1e57-4b76-998c-442486c7aabd</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.3813788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">705adebb-ea8c-4d4b-b762-fa2ea6bcd99e</d:entityid>
+        <d:codi_divisio_territorial>B-35</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Guinardó</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri35.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A24.1237483Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='70cd1c1f-1e45-4658-9017-542c96720d34',RowKey='adc3c1ee-4225-47eb-bc2e-372a8dc15320')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='70cd1c1f-1e45-4658-9017-542c96720d34',RowKey='adc3c1ee-4225-47eb-bc2e-372a8dc15320')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>70cd1c1f-1e45-4658-9017-542c96720d34</d:PartitionKey>
+        <d:RowKey>adc3c1ee-4225-47eb-bc2e-372a8dc15320</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:24.1237483Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">70cd1c1f-1e45-4658-9017-542c96720d34</d:entityid>
+        <d:codi_divisio_territorial>B-63</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Navas</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-09</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri63.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.8051165Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='715f7e98-545f-4a20-bcbf-1411df388ca1',RowKey='6d7b8ca5-c91d-4dd8-983a-04b38262e2d3')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='715f7e98-545f-4a20-bcbf-1411df388ca1',RowKey='6d7b8ca5-c91d-4dd8-983a-04b38262e2d3')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>715f7e98-545f-4a20-bcbf-1411df388ca1</d:PartitionKey>
+        <d:RowKey>6d7b8ca5-c91d-4dd8-983a-04b38262e2d3</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.8051165Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">715f7e98-545f-4a20-bcbf-1411df388ca1</d:entityid>
+        <d:codi_divisio_territorial>D-07</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Horta guinardó</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.7283088Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='74de563d-32aa-4269-8033-1e88b6f64a98',RowKey='934b7c2f-23fa-4276-8cdd-211465403a40')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='74de563d-32aa-4269-8033-1e88b6f64a98',RowKey='934b7c2f-23fa-4276-8cdd-211465403a40')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>74de563d-32aa-4269-8033-1e88b6f64a98</d:PartitionKey>
+        <d:RowKey>934b7c2f-23fa-4276-8cdd-211465403a40</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.7283088Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">74de563d-32aa-4269-8033-1e88b6f64a98</d:entityid>
+        <d:codi_divisio_territorial>B-31</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Vila de Gràcia</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-06</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri31.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.0613788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='774673ca-6bc1-44b3-a19d-b3fb7149959c',RowKey='b604c019-8296-45de-bfb5-05f0d044ceab')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='774673ca-6bc1-44b3-a19d-b3fb7149959c',RowKey='b604c019-8296-45de-bfb5-05f0d044ceab')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>774673ca-6bc1-44b3-a19d-b3fb7149959c</d:PartitionKey>
+        <d:RowKey>b604c019-8296-45de-bfb5-05f0d044ceab</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.0613788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">774673ca-6bc1-44b3-a19d-b3fb7149959c</d:entityid>
+        <d:codi_divisio_territorial>B-29</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Coll</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-06</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri29.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A21.810517Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='7a3f236d-a003-44d5-b433-6079228c795c',RowKey='cdec5f13-9ccd-43a4-8d74-832dc5d6a18d')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='7a3f236d-a003-44d5-b433-6079228c795c',RowKey='cdec5f13-9ccd-43a4-8d74-832dc5d6a18d')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>7a3f236d-a003-44d5-b433-6079228c795c</d:PartitionKey>
+        <d:RowKey>cdec5f13-9ccd-43a4-8d74-832dc5d6a18d</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:21.810517Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">7a3f236d-a003-44d5-b433-6079228c795c</d:entityid>
+        <d:codi_divisio_territorial>B-42</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Clota</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri42.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.0521412Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='7e208103-04f0-4faa-be0f-e08524cff321',RowKey='78d028be-5f3c-4e88-8c0e-4a625191a545')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='7e208103-04f0-4faa-be0f-e08524cff321',RowKey='78d028be-5f3c-4e88-8c0e-4a625191a545')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>7e208103-04f0-4faa-be0f-e08524cff321</d:PartitionKey>
+        <d:RowKey>78d028be-5f3c-4e88-8c0e-4a625191a545</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.0521412Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">7e208103-04f0-4faa-be0f-e08524cff321</d:entityid>
+        <d:codi_divisio_territorial>B-06</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Sagrada Família</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-02</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri6.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A23.920728Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='81896887-c7b9-4ba8-bff2-fe207d8974d0',RowKey='b7757cc0-b8c0-48cf-9d0f-bb80ddd0343d')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='81896887-c7b9-4ba8-bff2-fe207d8974d0',RowKey='b7757cc0-b8c0-48cf-9d0f-bb80ddd0343d')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>81896887-c7b9-4ba8-bff2-fe207d8974d0</d:PartitionKey>
+        <d:RowKey>b7757cc0-b8c0-48cf-9d0f-bb80ddd0343d</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:23.920728Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">81896887-c7b9-4ba8-bff2-fe207d8974d0</d:entityid>
+        <d:codi_divisio_territorial>B-55</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Ciutat Meridiana</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri55.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A22.8223788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='83e2f21e-567a-4a6f-b080-4e914ad78cee',RowKey='d97898dc-1bf1-4b65-a381-84d7e4ea02ff')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='83e2f21e-567a-4a6f-b080-4e914ad78cee',RowKey='d97898dc-1bf1-4b65-a381-84d7e4ea02ff')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>83e2f21e-567a-4a6f-b080-4e914ad78cee</d:PartitionKey>
+        <d:RowKey>d97898dc-1bf1-4b65-a381-84d7e4ea02ff</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:22.8223788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">83e2f21e-567a-4a6f-b080-4e914ad78cee</d:entityid>
+        <d:codi_divisio_territorial>B-62</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Congrés i els Indians</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-09</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri62.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.4192779Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='87d9cf66-8777-4d56-ad25-6d6d3d80abb3',RowKey='9c4e72d8-98de-4562-82d6-bc3e37d9d435')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='87d9cf66-8777-4d56-ad25-6d6d3d80abb3',RowKey='9c4e72d8-98de-4562-82d6-bc3e37d9d435')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>87d9cf66-8777-4d56-ad25-6d6d3d80abb3</d:PartitionKey>
+        <d:RowKey>9c4e72d8-98de-4562-82d6-bc3e37d9d435</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.4192779Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">87d9cf66-8777-4d56-ad25-6d6d3d80abb3</d:entityid>
+        <d:codi_divisio_territorial>B-25</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Gervasi - la Bonanova</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-05</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri25.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.7873788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='8ebca643-5ff5-4d1f-a0c3-32c0dc37d162',RowKey='459b1115-71c8-45df-8d54-de810f1525f2')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='8ebca643-5ff5-4d1f-a0c3-32c0dc37d162',RowKey='459b1115-71c8-45df-8d54-de810f1525f2')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>8ebca643-5ff5-4d1f-a0c3-32c0dc37d162</d:PartitionKey>
+        <d:RowKey>459b1115-71c8-45df-8d54-de810f1525f2</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.7873788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">8ebca643-5ff5-4d1f-a0c3-32c0dc37d162</d:entityid>
+        <d:codi_divisio_territorial>B-30</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Salut</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-06</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri30.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.4980858Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='911d5771-96a0-46e9-a9e6-dc46c40e544b',RowKey='bae1119a-5ea4-4562-bba0-b07ab8de34c3')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='911d5771-96a0-46e9-a9e6-dc46c40e544b',RowKey='bae1119a-5ea4-4562-bba0-b07ab8de34c3')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>911d5771-96a0-46e9-a9e6-dc46c40e544b</d:PartitionKey>
+        <d:RowKey>bae1119a-5ea4-4562-bba0-b07ab8de34c3</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.4980858Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">911d5771-96a0-46e9-a9e6-dc46c40e544b</d:entityid>
+        <d:codi_divisio_territorial>D-03</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sants Montjuic</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.8791239Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='9eee75ab-7136-4c77-9182-b901037deffa',RowKey='f187d9c9-1635-43cb-9e7d-3f20f9ddb78f')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='9eee75ab-7136-4c77-9182-b901037deffa',RowKey='f187d9c9-1635-43cb-9e7d-3f20f9ddb78f')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>9eee75ab-7136-4c77-9182-b901037deffa</d:PartitionKey>
+        <d:RowKey>f187d9c9-1635-43cb-9e7d-3f20f9ddb78f</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.8791239Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">9eee75ab-7136-4c77-9182-b901037deffa</d:entityid>
+        <d:codi_divisio_territorial>B-04</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Pere, Santa Caterina i la Ribera</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-01</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri4.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.3583788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='9f4fa778-5a7c-4e15-9d97-80bbb029859a',RowKey='3cbde8ba-778d-4a78-8bc2-04e3976f9d3a')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='9f4fa778-5a7c-4e15-9d97-80bbb029859a',RowKey='3cbde8ba-778d-4a78-8bc2-04e3976f9d3a')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>9f4fa778-5a7c-4e15-9d97-80bbb029859a</d:PartitionKey>
+        <d:RowKey>3cbde8ba-778d-4a78-8bc2-04e3976f9d3a</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.3583788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">9f4fa778-5a7c-4e15-9d97-80bbb029859a</d:entityid>
+        <d:codi_divisio_territorial>B-38</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Teixonera</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri38.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A16.4143788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='a093ec74-3ef4-44ea-a16a-48448f9314ae',RowKey='a199c8ef-e275-470d-b535-e5249ac8b05a')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='a093ec74-3ef4-44ea-a16a-48448f9314ae',RowKey='a199c8ef-e275-470d-b535-e5249ac8b05a')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>a093ec74-3ef4-44ea-a16a-48448f9314ae</d:PartitionKey>
+        <d:RowKey>a199c8ef-e275-470d-b535-e5249ac8b05a</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:16.4143788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">a093ec74-3ef4-44ea-a16a-48448f9314ae</d:entityid>
+        <d:codi_divisio_territorial>B-05</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Fort Pienc</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-02</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri5.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.5562916Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='a10a7419-f904-4b5c-a516-032653430bb1',RowKey='b6457179-d545-4276-86bc-a09dd589fccf')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='a10a7419-f904-4b5c-a516-032653430bb1',RowKey='b6457179-d545-4276-86bc-a09dd589fccf')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>a10a7419-f904-4b5c-a516-032653430bb1</d:PartitionKey>
+        <d:RowKey>b6457179-d545-4276-86bc-a09dd589fccf</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.5562916Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">a10a7419-f904-4b5c-a516-032653430bb1</d:entityid>
+        <d:codi_divisio_territorial>B-27</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Putxet i el Farró</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-05</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri27.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.2842644Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='a4c34713-b0d2-4b23-82f5-16306e8905f8',RowKey='518e1c6c-6ed7-48c4-b3bb-1adce079205f')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='a4c34713-b0d2-4b23-82f5-16306e8905f8',RowKey='518e1c6c-6ed7-48c4-b3bb-1adce079205f')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>a4c34713-b0d2-4b23-82f5-16306e8905f8</d:PartitionKey>
+        <d:RowKey>518e1c6c-6ed7-48c4-b3bb-1adce079205f</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.2842644Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">a4c34713-b0d2-4b23-82f5-16306e8905f8</d:entityid>
+        <d:codi_divisio_territorial>B-23</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sarrià</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-05</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri23.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.5690929Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='acd989b2-e54b-47fe-ae21-4cc381f479ff',RowKey='b69e0822-ea49-432e-9779-be2b7f12be9a')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='acd989b2-e54b-47fe-ae21-4cc381f479ff',RowKey='b69e0822-ea49-432e-9779-be2b7f12be9a')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>acd989b2-e54b-47fe-ae21-4cc381f479ff</d:PartitionKey>
+        <d:RowKey>b69e0822-ea49-432e-9779-be2b7f12be9a</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.5690929Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">acd989b2-e54b-47fe-ae21-4cc381f479ff</d:entityid>
+        <d:codi_divisio_territorial>D-02</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Eixample</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A15.9183788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='b0e2d20f-271b-4932-849e-eef48eb99ede',RowKey='94749625-f6ed-4a27-8d7e-9a208db3deba')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='b0e2d20f-271b-4932-849e-eef48eb99ede',RowKey='94749625-f6ed-4a27-8d7e-9a208db3deba')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>b0e2d20f-271b-4932-849e-eef48eb99ede</d:PartitionKey>
+        <d:RowKey>94749625-f6ed-4a27-8d7e-9a208db3deba</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:15.9183788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">b0e2d20f-271b-4932-849e-eef48eb99ede</d:entityid>
+        <d:codi_divisio_territorial>D-10</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Martí</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A15.6243788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='b4279923-74e8-433f-bf7f-b6518ee64fab',RowKey='5efe5482-ccdf-400d-8088-015d7b9f71bb')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='b4279923-74e8-433f-bf7f-b6518ee64fab',RowKey='5efe5482-ccdf-400d-8088-015d7b9f71bb')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>b4279923-74e8-433f-bf7f-b6518ee64fab</d:PartitionKey>
+        <d:RowKey>5efe5482-ccdf-400d-8088-015d7b9f71bb</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:15.6243788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">b4279923-74e8-433f-bf7f-b6518ee64fab</d:entityid>
+        <d:codi_divisio_territorial>D-04</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Les Corts</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A15.9963788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='b4460c54-70ca-4754-acd6-fcb178fb3ff5',RowKey='acd7b844-6c64-45d6-bac1-d3705490f665')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='b4460c54-70ca-4754-acd6-fcb178fb3ff5',RowKey='acd7b844-6c64-45d6-bac1-d3705490f665')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>b4460c54-70ca-4754-acd6-fcb178fb3ff5</d:PartitionKey>
+        <d:RowKey>acd7b844-6c64-45d6-bac1-d3705490f665</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:15.9963788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">b4460c54-70ca-4754-acd6-fcb178fb3ff5</d:entityid>
+        <d:codi_divisio_territorial>B-01</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Raval</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-01</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri1.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.5313788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='b4b823b0-1cec-4b41-917f-0188f807e110',RowKey='d80610c0-41c1-4c72-9c96-4b409be5a8ce')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='b4b823b0-1cec-4b41-917f-0188f807e110',RowKey='d80610c0-41c1-4c72-9c96-4b409be5a8ce')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>b4b823b0-1cec-4b41-917f-0188f807e110</d:PartitionKey>
+        <d:RowKey>d80610c0-41c1-4c72-9c96-4b409be5a8ce</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.5313788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">b4b823b0-1cec-4b41-917f-0188f807e110</d:entityid>
+        <d:codi_divisio_territorial>B-37</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Carmel</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri37.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A16.2983788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='b522a642-8d3b-411b-84d6-5f0e0672ead7',RowKey='4bc446d6-e6b7-41c4-8f52-c29579c737be')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='b522a642-8d3b-411b-84d6-5f0e0672ead7',RowKey='4bc446d6-e6b7-41c4-8f52-c29579c737be')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>b522a642-8d3b-411b-84d6-5f0e0672ead7</d:PartitionKey>
+        <d:RowKey>4bc446d6-e6b7-41c4-8f52-c29579c737be</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:16.2983788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">b522a642-8d3b-411b-84d6-5f0e0672ead7</d:entityid>
+        <d:codi_divisio_territorial>B-03</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Barceloneta</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-01</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri3.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A22.2953788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='ba115a03-3522-49c6-9f70-1403858e5cab',RowKey='b5319ec2-5f9d-459d-84af-51444e07260e')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='ba115a03-3522-49c6-9f70-1403858e5cab',RowKey='b5319ec2-5f9d-459d-84af-51444e07260e')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>ba115a03-3522-49c6-9f70-1403858e5cab</d:PartitionKey>
+        <d:RowKey>b5319ec2-5f9d-459d-84af-51444e07260e</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:22.2953788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">ba115a03-3522-49c6-9f70-1403858e5cab</d:entityid>
+        <d:codi_divisio_territorial>B-61</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Sagrera</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-09</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri61.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.3153788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='bce9fb21-a52d-44b9-a4cb-663406c6ee40',RowKey='c55a3807-b2c5-41f6-a1f1-5873af3ad039')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='bce9fb21-a52d-44b9-a4cb-663406c6ee40',RowKey='c55a3807-b2c5-41f6-a1f1-5873af3ad039')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>bce9fb21-a52d-44b9-a4cb-663406c6ee40</d:PartitionKey>
+        <d:RowKey>c55a3807-b2c5-41f6-a1f1-5873af3ad039</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.3153788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">bce9fb21-a52d-44b9-a4cb-663406c6ee40</d:entityid>
+        <d:codi_divisio_territorial>B-46</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Turó de la Peira</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri46.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.2043788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='c42733e2-5c0c-44d4-b207-ae4aa41e7aef',RowKey='b7690e04-8490-48cf-a2cc-701e7f0bf5ef')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='c42733e2-5c0c-44d4-b207-ae4aa41e7aef',RowKey='b7690e04-8490-48cf-a2cc-701e7f0bf5ef')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>c42733e2-5c0c-44d4-b207-ae4aa41e7aef</d:PartitionKey>
+        <d:RowKey>b7690e04-8490-48cf-a2cc-701e7f0bf5ef</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.2043788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">c42733e2-5c0c-44d4-b207-ae4aa41e7aef</d:entityid>
+        <d:codi_divisio_territorial>B-36</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Font d en Fargues</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri36.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A21.6214981Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='c48f070e-319f-4538-a6de-1424f8e19d90',RowKey='25c810cf-c794-492b-bbfb-3f01c63ef913')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='c48f070e-319f-4538-a6de-1424f8e19d90',RowKey='25c810cf-c794-492b-bbfb-3f01c63ef913')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>c48f070e-319f-4538-a6de-1424f8e19d90</d:PartitionKey>
+        <d:RowKey>25c810cf-c794-492b-bbfb-3f01c63ef913</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:21.6214981Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">c48f070e-319f-4538-a6de-1424f8e19d90</d:entityid>
+        <d:codi_divisio_territorial>B-40</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Montbau</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri40.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A22.5623788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='c5e6ff42-e9f3-450c-90c3-e80150ab15ec',RowKey='7ee2719b-e63b-426c-8c60-2876e9afb838')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='c5e6ff42-e9f3-450c-90c3-e80150ab15ec',RowKey='7ee2719b-e63b-426c-8c60-2876e9afb838')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>c5e6ff42-e9f3-450c-90c3-e80150ab15ec</d:PartitionKey>
+        <d:RowKey>7ee2719b-e63b-426c-8c60-2876e9afb838</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:22.5623788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">c5e6ff42-e9f3-450c-90c3-e80150ab15ec</d:entityid>
+        <d:codi_divisio_territorial>B-65</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Clot</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri65.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.9373788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='cc374fa6-77a4-462c-99cd-d8e1fb5474b8',RowKey='4e771dbb-f52d-4f86-82ed-a3cde9d9b013')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='cc374fa6-77a4-462c-99cd-d8e1fb5474b8',RowKey='4e771dbb-f52d-4f86-82ed-a3cde9d9b013')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>cc374fa6-77a4-462c-99cd-d8e1fb5474b8</d:PartitionKey>
+        <d:RowKey>4e771dbb-f52d-4f86-82ed-a3cde9d9b013</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.9373788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">cc374fa6-77a4-462c-99cd-d8e1fb5474b8</d:entityid>
+        <d:codi_divisio_territorial>B-53</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Trinitat Nova</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri53.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A21.0234383Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='cd97e060-55df-445f-a029-8de4aa69baa6',RowKey='3bb8ee70-c0c5-40d4-a2b8-31389d5914ce')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='cd97e060-55df-445f-a029-8de4aa69baa6',RowKey='3bb8ee70-c0c5-40d4-a2b8-31389d5914ce')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>cd97e060-55df-445f-a029-8de4aa69baa6</d:PartitionKey>
+        <d:RowKey>3bb8ee70-c0c5-40d4-a2b8-31389d5914ce</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:21.0234383Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">cd97e060-55df-445f-a029-8de4aa69baa6</d:entityid>
+        <d:codi_divisio_territorial>B-41</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Vall d Hebron</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri41.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A23.0563788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='cdbdc4da-367d-499a-aa63-32fb538e7d8f',RowKey='4fc9fd11-384f-4db0-a4ff-0b9dd252bf79')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='cdbdc4da-367d-499a-aa63-32fb538e7d8f',RowKey='4fc9fd11-384f-4db0-a4ff-0b9dd252bf79')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>cdbdc4da-367d-499a-aa63-32fb538e7d8f</d:PartitionKey>
+        <d:RowKey>4fc9fd11-384f-4db0-a4ff-0b9dd252bf79</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:23.0563788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">cdbdc4da-367d-499a-aa63-32fb538e7d8f</d:entityid>
+        <d:codi_divisio_territorial>B-72</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Martí de Provençals</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri72.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A15.5633788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='d0335417-436c-45ce-9d54-17dfab55294a',RowKey='75c45161-886f-4f94-a763-46e99df41830')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='d0335417-436c-45ce-9d54-17dfab55294a',RowKey='75c45161-886f-4f94-a763-46e99df41830')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>d0335417-436c-45ce-9d54-17dfab55294a</d:PartitionKey>
+        <d:RowKey>75c45161-886f-4f94-a763-46e99df41830</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:15.5633788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">d0335417-436c-45ce-9d54-17dfab55294a</d:entityid>
+        <d:codi_divisio_territorial>D-01</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Ciutat vella</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.2271587Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='d4384bd5-265e-403e-86d8-5de582c89e14',RowKey='07b3518b-2126-4733-bbce-1f8cd345afad')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='d4384bd5-265e-403e-86d8-5de582c89e14',RowKey='07b3518b-2126-4733-bbce-1f8cd345afad')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>d4384bd5-265e-403e-86d8-5de582c89e14</d:PartitionKey>
+        <d:RowKey>07b3518b-2126-4733-bbce-1f8cd345afad</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.2271587Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">d4384bd5-265e-403e-86d8-5de582c89e14</d:entityid>
+        <d:codi_divisio_territorial>B-08</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>l Antiga Esquerra de l Eixample</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-02</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri8.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.4133788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='da645ddc-4338-4498-91ac-e7b4e45ec5d6',RowKey='c9ae58d3-593e-43b5-8de1-2c7c4b206aa6')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='da645ddc-4338-4498-91ac-e7b4e45ec5d6',RowKey='c9ae58d3-593e-43b5-8de1-2c7c4b206aa6')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>da645ddc-4338-4498-91ac-e7b4e45ec5d6</d:PartitionKey>
+        <d:RowKey>c9ae58d3-593e-43b5-8de1-2c7c4b206aa6</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.4133788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">da645ddc-4338-4498-91ac-e7b4e45ec5d6</d:entityid>
+        <d:codi_divisio_territorial>B-20</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Maternitat i Sant Ramon</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-04</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri20.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A22.1115471Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='db33246d-e9ef-4461-9cf4-fe006c4b65d7',RowKey='182f9771-2a24-4a4d-ae02-a796d5aa60a8')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='db33246d-e9ef-4461-9cf4-fe006c4b65d7',RowKey='182f9771-2a24-4a4d-ae02-a796d5aa60a8')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>db33246d-e9ef-4461-9cf4-fe006c4b65d7</d:PartitionKey>
+        <d:RowKey>182f9771-2a24-4a4d-ae02-a796d5aa60a8</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:22.1115471Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">db33246d-e9ef-4461-9cf4-fe006c4b65d7</d:entityid>
+        <d:codi_divisio_territorial>B-50</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>les Roquetes</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri50.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A24.2627622Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='dcf7dbf5-1c93-49d0-a100-e187f991d5f1',RowKey='eb66d010-a11c-43e5-a569-f2629ca40a02')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='dcf7dbf5-1c93-49d0-a100-e187f991d5f1',RowKey='eb66d010-a11c-43e5-a569-f2629ca40a02')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>dcf7dbf5-1c93-49d0-a100-e187f991d5f1</d:PartitionKey>
+        <d:RowKey>eb66d010-a11c-43e5-a569-f2629ca40a02</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:24.2627622Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">dcf7dbf5-1c93-49d0-a100-e187f991d5f1</d:entityid>
+        <d:codi_divisio_territorial>B-69</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Diagonal Mar i el Front Marítim del Poblenou</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri69.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.2633788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='e0b3a8e3-8219-46d4-a588-3105d12e93b8',RowKey='4ac5798f-8925-45bb-9a05-a70c6bcb1e3e')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='e0b3a8e3-8219-46d4-a588-3105d12e93b8',RowKey='4ac5798f-8925-45bb-9a05-a70c6bcb1e3e')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>e0b3a8e3-8219-46d4-a588-3105d12e93b8</d:PartitionKey>
+        <d:RowKey>4ac5798f-8925-45bb-9a05-a70c6bcb1e3e</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.2633788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">e0b3a8e3-8219-46d4-a588-3105d12e93b8</d:entityid>
+        <d:codi_divisio_territorial>B-17</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sants - Badal</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-03</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri17.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.6401Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='eb519af6-bcf6-4137-8d54-b2bf9bdad99e',RowKey='e29fd1a8-78c5-48ea-a920-c465f10b8f2b')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='eb519af6-bcf6-4137-8d54-b2bf9bdad99e',RowKey='e29fd1a8-78c5-48ea-a920-c465f10b8f2b')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>eb519af6-bcf6-4137-8d54-b2bf9bdad99e</d:PartitionKey>
+        <d:RowKey>e29fd1a8-78c5-48ea-a920-c465f10b8f2b</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.6401Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">eb519af6-bcf6-4137-8d54-b2bf9bdad99e</d:entityid>
+        <d:codi_divisio_territorial>D-05</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sarrià Sant Gervasi</d:nom_divisio_territorial>
+        <d:categoria_divisio>Districte</d:categoria_divisio>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.1133788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='eb5626b2-075d-472f-ac6c-5e82f721cdfd',RowKey='721fa18c-77e6-4310-b58e-40a23ba5a078')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='eb5626b2-075d-472f-ac6c-5e82f721cdfd',RowKey='721fa18c-77e6-4310-b58e-40a23ba5a078')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>eb5626b2-075d-472f-ac6c-5e82f721cdfd</d:PartitionKey>
+        <d:RowKey>721fa18c-77e6-4310-b58e-40a23ba5a078</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.1133788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">eb5626b2-075d-472f-ac6c-5e82f721cdfd</d:entityid>
+        <d:codi_divisio_territorial>B-14</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Font de la Guatlla</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-03</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri14.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A16.1483788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='ebc128c3-2044-44fe-87eb-ae0998d9d9e7',RowKey='d2221e16-1907-4b83-a558-7ca072cde838')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='ebc128c3-2044-44fe-87eb-ae0998d9d9e7',RowKey='d2221e16-1907-4b83-a558-7ca072cde838')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>ebc128c3-2044-44fe-87eb-ae0998d9d9e7</d:PartitionKey>
+        <d:RowKey>d2221e16-1907-4b83-a558-7ca072cde838</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:16.1483788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">ebc128c3-2044-44fe-87eb-ae0998d9d9e7</d:entityid>
+        <d:codi_divisio_territorial>B-02</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Barri Gòtic</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-01</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri2.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.8324192Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='ef1a8f5d-5a5e-40f9-9685-00a53a830965',RowKey='31af2dbe-6cc5-4fb7-9dc8-487e4569abad')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='ef1a8f5d-5a5e-40f9-9685-00a53a830965',RowKey='31af2dbe-6cc5-4fb7-9dc8-487e4569abad')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>ef1a8f5d-5a5e-40f9-9685-00a53a830965</d:PartitionKey>
+        <d:RowKey>31af2dbe-6cc5-4fb7-9dc8-487e4569abad</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.8324192Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">ef1a8f5d-5a5e-40f9-9685-00a53a830965</d:entityid>
+        <d:codi_divisio_territorial>B-39</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Genís dels Agudells</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-07</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri39.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A17.8943788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='f17dcafe-482e-48c2-9e0c-f12fbef6167e',RowKey='c0a403d6-e69f-41b6-ba9b-9600de00b131')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='f17dcafe-482e-48c2-9e0c-f12fbef6167e',RowKey='c0a403d6-e69f-41b6-ba9b-9600de00b131')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>f17dcafe-482e-48c2-9e0c-f12fbef6167e</d:PartitionKey>
+        <d:RowKey>c0a403d6-e69f-41b6-ba9b-9600de00b131</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:17.8943788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">f17dcafe-482e-48c2-9e0c-f12fbef6167e</d:entityid>
+        <d:codi_divisio_territorial>B-21</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Pedralbes</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-04</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri21.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A22.7103788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='f1b4dba7-15f5-4287-9d8b-847a10410c5f',RowKey='21d295d1-9691-421c-a344-02bd28f956f7')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='f1b4dba7-15f5-4287-9d8b-847a10410c5f',RowKey='21d295d1-9691-421c-a344-02bd28f956f7')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>f1b4dba7-15f5-4287-9d8b-847a10410c5f</d:PartitionKey>
+        <d:RowKey>21d295d1-9691-421c-a344-02bd28f956f7</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:22.7103788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">f1b4dba7-15f5-4287-9d8b-847a10410c5f</d:entityid>
+        <d:codi_divisio_territorial>B-71</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Provençals del Poblenou</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-10</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri71.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A18.4051765Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='f3213462-5982-42cc-bc5e-6e022fb08eb5',RowKey='2c248d18-e496-499b-853c-df0b1d2b469d')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='f3213462-5982-42cc-bc5e-6e022fb08eb5',RowKey='2c248d18-e496-499b-853c-df0b1d2b469d')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>f3213462-5982-42cc-bc5e-6e022fb08eb5</d:PartitionKey>
+        <d:RowKey>2c248d18-e496-499b-853c-df0b1d2b469d</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:18.4051765Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">f3213462-5982-42cc-bc5e-6e022fb08eb5</d:entityid>
+        <d:codi_divisio_territorial>B-09</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Nova Esquerra de l Eixample</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-02</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri9.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A16.6923788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='f3c47de4-0690-46b7-88e7-52bb2be73da9',RowKey='6cb328ac-ec6c-45a0-8c38-38d2db2da568')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='f3c47de4-0690-46b7-88e7-52bb2be73da9',RowKey='6cb328ac-ec6c-45a0-8c38-38d2db2da568')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>f3c47de4-0690-46b7-88e7-52bb2be73da9</d:PartitionKey>
+        <d:RowKey>6cb328ac-ec6c-45a0-8c38-38d2db2da568</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:16.6923788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">f3c47de4-0690-46b7-88e7-52bb2be73da9</d:entityid>
+        <d:codi_divisio_territorial>B-10</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Sant Antoni</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-02</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri10.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.380374Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='f423e535-d6f1-4e2d-af9d-afaced0d2af5',RowKey='9c16c534-d76d-45b8-a7c8-82d85fa644b6')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='f423e535-d6f1-4e2d-af9d-afaced0d2af5',RowKey='9c16c534-d76d-45b8-a7c8-82d85fa644b6')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>f423e535-d6f1-4e2d-af9d-afaced0d2af5</d:PartitionKey>
+        <d:RowKey>9c16c534-d76d-45b8-a7c8-82d85fa644b6</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.380374Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">f423e535-d6f1-4e2d-af9d-afaced0d2af5</d:entityid>
+        <d:codi_divisio_territorial>B-28</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Vallcarca i els Penitents</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-06</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri28.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A19.9173277Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='f44d4fde-65bb-4b73-b10d-0126a3d61925',RowKey='6f866c61-b1c8-42e4-9385-4b736f007439')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='f44d4fde-65bb-4b73-b10d-0126a3d61925',RowKey='6f866c61-b1c8-42e4-9385-4b736f007439')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>f44d4fde-65bb-4b73-b10d-0126a3d61925</d:PartitionKey>
+        <d:RowKey>6f866c61-b1c8-42e4-9385-4b736f007439</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:19.9173277Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">f44d4fde-65bb-4b73-b10d-0126a3d61925</d:entityid>
+        <d:codi_divisio_territorial>B-24</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>les Tres Torres</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-05</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri24.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A20.0903788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='f70ad306-d102-493f-8a46-f64ab135acfc',RowKey='7640200e-0ed7-4092-a046-1204c8d0ae7a')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='f70ad306-d102-493f-8a46-f64ab135acfc',RowKey='7640200e-0ed7-4092-a046-1204c8d0ae7a')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>f70ad306-d102-493f-8a46-f64ab135acfc</d:PartitionKey>
+        <d:RowKey>7640200e-0ed7-4092-a046-1204c8d0ae7a</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:20.0903788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">f70ad306-d102-493f-8a46-f64ab135acfc</d:entityid>
+        <d:codi_divisio_territorial>B-54</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>Torre Baró</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-08</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri54.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A22.4413788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='fd71bd15-cd73-46fc-8aea-26d360f0835f',RowKey='0bd90f1e-1532-43e4-a9d2-80a937764b7d')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='fd71bd15-cd73-46fc-8aea-26d360f0835f',RowKey='0bd90f1e-1532-43e4-a9d2-80a937764b7d')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>fd71bd15-cd73-46fc-8aea-26d360f0835f</d:PartitionKey>
+        <d:RowKey>0bd90f1e-1532-43e4-a9d2-80a937764b7d</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:22.4413788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">fd71bd15-cd73-46fc-8aea-26d360f0835f</d:entityid>
+        <d:codi_divisio_territorial>B-57</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>la Trinitat Vella</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-09</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri57.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+  <entry m:etag="W/&quot;datetime'2013-10-07T07%3A44%3A16.8403788Z'&quot;">
+    <id>http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0(PartitionKey='fe0a0fa8-3be9-4419-88f3-fd01965c0487',RowKey='b903e46c-23a7-4438-841d-12bbb9ba083d')</id>
+    <category term="OGDI.Data.OPENDATADIVTER0Item" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <link rel="edit" title="OPENDATADIVTER0" href="OPENDATADIVTER0(PartitionKey='fe0a0fa8-3be9-4419-88f3-fd01965c0487',RowKey='b903e46c-23a7-4438-841d-12bbb9ba083d')" />
+    <title />
+    <updated>2015-02-27T18:40:21Z</updated>
+    <author>
+      <name />
+    </author>
+    <content type="application/xml">
+      <m:properties>
+        <d:PartitionKey>fe0a0fa8-3be9-4419-88f3-fd01965c0487</d:PartitionKey>
+        <d:RowKey>b903e46c-23a7-4438-841d-12bbb9ba083d</d:RowKey>
+        <d:Timestamp m:type="Edm.DateTime">2013-10-07T07:44:16.8403788Z</d:Timestamp>
+        <d:entityid m:type="Edm.Guid">fe0a0fa8-3be9-4419-88f3-fd01965c0487</d:entityid>
+        <d:codi_divisio_territorial>B-11</d:codi_divisio_territorial>
+        <d:nom_divisio_territorial>el Poble Sec - Parc Montjuïc</d:nom_divisio_territorial>
+        <d:categoria_divisio>Barri</d:categoria_divisio>
+        <d:codi_divisio_territorial_pare>D-03</d:codi_divisio_territorial_pare>
+        <d:url_fitxa_divisio_territorial>http://www.bcn.cat/estadistica/catala/dades/inf/barris/a2011/barri11.pdf</d:url_fitxa_divisio_territorial>
+      </m:properties>
+    </content>
+  </entry>
+</feed>
+<!-- GET http://bcnodata.cloudapp.net:8080/v1/Data/OPENDATADIVTER0 -->
+<!-- HTTP/1.1 200 OK -->
+<!-- Cache-Control: no-cache -->
+<!-- Pragma: no-cache -->
+<!-- Content-Type: application/atom+xml;charset=utf-8 -->
+<!-- Expires: -1 -->
+<!-- Server: Microsoft-IIS/7.0 -->
+<!-- DataServiceVersion: 2.0 -->
+<!-- x-ms-request-id: 0c697084-0002-0032-41d9-cd323d000000 -->
+<!-- X-AspNet-Version: 4.0.30319 -->
+<!-- X-Powered-By: ASP.NET -->
+<!-- Date: Fri, 27 Feb 2015 18:40:22 GMT -->
+<!-- Content-Length: 124556 -->
+<!-- Request duration: 1.539737s -->
