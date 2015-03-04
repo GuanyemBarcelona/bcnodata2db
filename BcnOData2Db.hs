@@ -19,13 +19,14 @@ import           Data.Text                   (Text)
 import           Database.Persist
 import           Database.Persist.Postgresql
 import           Database.Persist.TH
+import           Network.HTTP.Conduit
 import           Options.Applicative
 import           Text.XML
 import           Text.XML.Lens
 
 
 -- |
--- = OData resources
+-- = OData collections
 
 share
   [ mkPersist sqlSettings { mpsPrefixFields   = True
@@ -62,8 +63,14 @@ divisioTerritorial = DivisioTerritorial
 
 
 -- |
--- = Command lined options
+-- = Command line options
 
+--data Options = Options { command :: Command }
+
+--data Command = List | Get GetOptions
+
+-- data GetOptions
+--   = GetOptions
 data Options
   = Options
     { dbname   :: String
@@ -109,7 +116,7 @@ helpMessage =
 
 main :: IO ()
 main = execParser options' >>= \(Options d u p) -> do
-  document <- readDocument
+  document <- readDocument "OPENDATADIVTER0.xml"
   let entryList = document ^.. entries . runFold divisioTerritorial
   -- mapM_ print entryList
   print $ length entryList
@@ -124,9 +131,6 @@ main = execParser options' >>= \(Options d u p) -> do
       districtesPrimer _ _                                    = EQ
       options' = info (helper <*> options) helpMessage
       pqConnOpts d u p = B.pack $ concat [d, u, p]
-
-readDocument :: IO Document
-readDocument = Text.XML.readFile def "examples/OPENDATADIVTER0.xml"
 
 -- | Traversal of an OData resource (an XML Document) focusing on all entries
 -- (i.e. database rows).
@@ -149,3 +153,27 @@ propText propName = to (findOf elemAndText hasPropName) . to (fmap snd)
     hasPropName (e, _) = e ^. localName == propName
     elemAndText :: Fold Element (Element, Text)
     elemAndText = plate . runFold ((,) <$> Fold (to id) <*> Fold text)
+
+readCollectionList :: IO [Text]
+readCollectionList = do
+  document <- readDocument ""
+  return $ document ^.. titles
+
+-- | Traversal of an OData collection catalog (an XML Document) focusing on all
+-- collection titles.
+titles :: Traversal' Document Text
+titles =
+     root
+  .  named "service"
+  ./ named "workspace"
+  ./ named "collection"
+  ./ named "title"
+  .  text
+
+odataBaseUrl :: String
+odataBaseUrl = "http://bcnodata.cloudapp.net:8080/v1/Data/"
+
+readDocument :: String -> IO Document
+readDocument docName = do
+  result <- simpleHttp $ odataBaseUrl ++ docName
+  return $ parseLBS_ def result
