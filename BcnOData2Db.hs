@@ -10,28 +10,45 @@ module Main where
 
 import           Control.Applicative
 import           Control.Lens
+import           Control.Monad.IO.Class      (liftIO)
+import           Control.Monad.Logger        (runStderrLoggingT)
+import qualified Data.ByteString.Char8       as B (pack)
+import           Data.List
 import           Data.Maybe
-import           Data.Text           (Text)
+import           Data.Text                   (Text)
+import           Database.Persist
+import           Database.Persist.Postgresql
 import           Database.Persist.TH
+import           Options.Applicative
 import           Text.XML
 import           Text.XML.Lens
+
 
 -- |
 -- = OData resources
 
 share
-  [mkPersist sqlSettings, mkMigrate "migrateAll"]
+  [ mkPersist sqlSettings { mpsPrefixFields   = True
+                          , mpsGeneric        = False
+                          , mpsGenerateLenses = True
+                          }
+  , mkMigrate "migrateAll"
+  ]
   [persistLowerCase|
-    DivisioTerritorial sql=divisions_territorials
+    DivisioTerritorial
       -- We can use enumerated types in persistent, but they require a more
       -- involved use of TH that breaks Emacs flycheck. They are translated into
       -- SQL varchars anyway.
       -- categoria_divisio CategoriaDivisio
-      codi_divisio_territorial          Text                sqltype=varchar(4)
+      codi_divisio_territorial          Text           sqltype=varchar(4)
       nom_divisio_territorial           Text
       categoria_divisio                 Text
-      codi_divisio_territorial_pare     Text Maybe          sqltype=varchar(4)
+      codi_divisio_territorial_pare     Text Maybe     sqltype=varchar(4)
+      url_fitxa_divisio_territorial     Text Maybe
+
       Primary codi_divisio_territorial
+      Foreign DivisioTerritorial fkey codi_divisio_territorial_pare
+      UniqueUrlFitxaDivisioTerritorial url_fitxa_divisio_territorial !force
       deriving Show
   |]
 
@@ -41,17 +58,72 @@ divisioTerritorial = DivisioTerritorial
   <*> Fold ( propText "nom_divisio_territorial"        . to fromJust )
   <*> Fold ( propText "categoria_divisio"              . to fromJust )
   <*> Fold ( propText "codi_divisio_territorial_pare"                )
+  <*> Fold ( propText "url_fitxa_divisio_territorial"                )
+
 
 -- |
--- = Main program and auxiliary functions
+-- = Command lined options
+
+data Options
+  = Options
+    { dbname   :: String
+    , user     :: String
+    , password :: String
+    }
+
+options :: Parser Options
+options = Options
+  <$> option (str >>= param "dbname")
+        ( long "dbname"
+          <> short 'd'
+          <> metavar "DB"
+          <> help "Passes parameter dbname=DB to database connection"
+          <> value ""
+        )
+  <*> option (str >>= param "user")
+        ( long "username"
+          <> short 'u'
+          <> metavar "USER"
+          <> help "Passes parameter user=USER to database connection"
+          <> value ""
+        )
+  <*> option (str >>= param "password")
+        ( long "password"
+          <> short 'p'
+          <> metavar "PASSWD"
+          <> help "Passes param. password=PASSWD to database connection"
+          <> value ""
+        )
+  where
+    param _ "" = return ""
+    param p s  = return $ p ++ "=" ++ s ++ " "
+
+helpMessage :: InfoMod a
+helpMessage =
+  fullDesc
+  <> progDesc "Connect to database and do things"
+  <> header "bcnodata2db - Relational-ize OData from http://opendata.bcn.cat"
+
+-- |
+-- = Entry point and auxiliary functions
 
 main :: IO ()
-main = do
+main = execParser options' >>= \(Options d u p) -> do
   document <- readDocument
   let entryList = document ^.. entries . runFold divisioTerritorial
-  mapM_ print entryList
+  -- mapM_ print entryList
   print $ length entryList
+  runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
+    liftIO $ flip runSqlPersistMPool pool $ do
+      runMigration migrateAll
+      insertMany $ sortBy districtesPrimer entryList
   return ()
+    where
+      districtesPrimer (DivisioTerritorial _ _ _ Nothing _) _ = LT
+      districtesPrimer _ (DivisioTerritorial _ _ _ Nothing _) = GT
+      districtesPrimer _ _                                    = EQ
+      options' = info (helper <*> options) helpMessage
+      pqConnOpts d u p = B.pack $ concat [d, u, p]
 
 readDocument :: IO Document
 readDocument = Text.XML.readFile def "examples/OPENDATADIVTER0.xml"

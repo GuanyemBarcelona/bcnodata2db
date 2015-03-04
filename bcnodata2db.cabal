@@ -18,18 +18,24 @@ cabal-version:       >=1.10
 executable bcnodata2db
   main-is:             BcnOData2Db.hs
   -- other-modules:       
-  other-extensions:    GADTs
-                     , GeneralizedNewtypeDeriving
-                     , MultiParamTypeClasses
-                     , OverloadedStrings
-                     , QuasiQuotes
-                     , TemplateHaskell
-                     , TypeFamilies
-  build-depends:       base >=4.7 && <4.8
-                     , lens
-                     , persistent-template
-                     , text >=1.1 && <1.2
-                     , xml-conduit
-                     , xml-lens
+  other-extensions: GADTs
+                  , GeneralizedNewtypeDeriving
+                  , MultiParamTypeClasses
+                  , OverloadedStrings
+                  , QuasiQuotes
+                  , TemplateHaskell
+                  , TypeFamilies
+  build-depends: base >=4.7 && <4.8
+               , bytestring
+               , lens
+               , monad-logger >= 0.3.11.1
+               , optparse-applicative
+               , persistent
+               , persistent-postgresql
+               , persistent-template
+               , text >=1.1 && <1.2
+               , transformers >= 0.3.0.0
+               , xml-conduit
+               , xml-lens
   -- hs-source-dirs:      
   default-language:    Haskell2010
