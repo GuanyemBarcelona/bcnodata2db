@@ -117,13 +117,12 @@ helpMessage =
 main :: IO ()
 main = execParser options' >>= \(Options d u p) -> do
   document <- readDocument "OPENDATADIVTER0.xml"
-  let entryList = document ^.. memberResources . runFold divisioTerritorial
-  -- mapM_ print entryList
-  print $ length entryList
+  let resourceList = document ^.. memberResources . runFold divisioTerritorial
+  print $ length resourceList
   runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
     liftIO $ flip runSqlPersistMPool pool $ do
       runMigration migrateAll
-      insertMany $ sortBy districtesPrimer entryList
+      insertMany $ sortBy districtesPrimer resourceList
   return ()
     where
       districtesPrimer (DivisioTerritorial _ _ _ Nothing _) _ = LT
@@ -144,8 +143,8 @@ memberResources =
   ./ named "properties"
 
 -- | Fold on XML Element's representing the properties (an XML Element called
--- "properties") of an OData entity. Given a property name, it returns the Fold
--- for the text associated to this property, if it exists in the Element
+-- "properties") of an OData resource. Given a property name, it returns the
+-- Fold for the text associated to this property, if it exists in the Element
 -- (Nothing if not).
 propText :: Text -> Fold Element (Maybe Text)
 propText propName = to (findOf elemAndText hasPropName) . to (fmap snd)
