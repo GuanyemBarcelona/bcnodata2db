@@ -157,7 +157,17 @@ propText propName = to (findOf elemAndText hasPropName) . to (fmap snd)
 readCollectionList :: IO [Text]
 readCollectionList = do
   document <- readDocument ""
-  return $ document ^.. titles
+  return $ document ^.. links
+
+-- | Traversal of an OData collection catalog (an XML Document) focusing on all
+-- collection links.
+links :: Traversal' Document Text
+links =
+     root
+  .  named "service"
+  ./ named "workspace"
+  ./ named "collection"
+  .  attr  "href"
 
 -- | Traversal of an OData collection catalog (an XML Document) focusing on all
 -- collection titles.
