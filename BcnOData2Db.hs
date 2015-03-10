@@ -26,7 +26,7 @@ import           Text.XML.Lens
 
 
 -- |
--- = OData collections
+-- = OData resource collections
 
 share
   [ mkPersist sqlSettings { mpsPrefixFields   = True
@@ -117,7 +117,7 @@ helpMessage =
 main :: IO ()
 main = execParser options' >>= \(Options d u p) -> do
   document <- readDocument "OPENDATADIVTER0.xml"
-  let entryList = document ^.. entries . runFold divisioTerritorial
+  let entryList = document ^.. memberResources . runFold divisioTerritorial
   -- mapM_ print entryList
   print $ length entryList
   runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
@@ -132,10 +132,11 @@ main = execParser options' >>= \(Options d u p) -> do
       options' = info (helper <*> options) helpMessage
       pqConnOpts d u p = B.pack $ concat [d, u, p]
 
--- | Traversal of an OData resource (an XML Document) focusing on all entries
--- (i.e. database rows).
-entries :: Traversal' Document Element
-entries =
+-- | Traversal of an OData resource collection (an XML Document) focusing on all
+-- member resources (i.e. database rows). (Follow terminology found in
+-- http://bitworking.org/projects/atom/rfc5023.html#rfc.section.1).
+memberResources :: Traversal' Document Element
+memberResources =
      root
   .  named "feed"
   ./ named "entry"
@@ -159,8 +160,9 @@ readCollectionList = do
   document <- readDocument ""
   return $ document ^.. links
 
--- | Traversal of an OData collection catalog (an XML Document) focusing on all
--- collection links.
+-- | Traversal of an OData service document (an XML Document) focusing on all
+-- collection links. (Follow terminology found in
+-- http://bitworking.org/projects/atom/rfc5023.html#rfc.section.1).
 links :: Traversal' Document Text
 links =
      root
@@ -169,8 +171,9 @@ links =
   ./ named "collection"
   .  attr  "href"
 
--- | Traversal of an OData collection catalog (an XML Document) focusing on all
--- collection titles.
+-- | Traversal of an OData service document (an XML Document) focusing on all
+-- collection titles. (Follow terminology found in
+-- http://bitworking.org/projects/atom/rfc5023.html#rfc.section.1).
 titles :: Traversal' Document Text
 titles =
      root
