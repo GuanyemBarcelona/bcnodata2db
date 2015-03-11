@@ -4,6 +4,7 @@
 {-# LANGUAGE OverloadedStrings          #-}
 {-# LANGUAGE QuasiQuotes                #-}
 {-# LANGUAGE RankNTypes                 #-}
+{-# LANGUAGE ScopedTypeVariables        #-}
 {-# LANGUAGE TemplateHaskell            #-}
 {-# LANGUAGE TypeFamilies               #-}
 module Main where
@@ -16,6 +17,7 @@ import           Control.Monad.IO.Class      (liftIO)
 import           Control.Monad.Logger        (runStderrLoggingT)
 import qualified Data.ByteString.Char8       as B8 (pack)
 import           Data.List
+import qualified Data.Map.Strict             as M
 import           Data.Maybe
 import           Data.Text                   (Text, unpack)
 import           Database.Persist
@@ -164,15 +166,18 @@ readCollectionList = do
   service <- readDocument ""
   return $ service ^.. collectionLinks
 
-serviceDoc2Persistent :: IO ()
-serviceDoc2Persistent = handle readServiceExp $ do
+-- | Retrieve all collections in Barcelona ODATA and print information useful
+-- for creating a Persistent description of the data.
+service2Persistent :: IO ()
+service2Persistent = handle readServiceExp $ do
   service <- readDocument ""
   let links = service ^.. collectionLinks
   forM_ links $ \link -> handle (readCollectionExp link) $ do
     let ulink = unpack link
     collection <- readDocument ulink
-    let resources = collection ^.. memberResources
-    putStr "    " >> putStr ulink >> putStr " " >> print (length resources)
+    putStr "    " >> putStrLn ulink
+    collection2Persistent collection
+    putStrLn ""
     return ()
   where
     readServiceExp :: HttpException -> IO ()
@@ -180,6 +185,19 @@ serviceDoc2Persistent = handle readServiceExp $ do
     readCollectionExp :: Text -> HttpException -> IO ()
     readCollectionExp link e =    putStr "    " >> putStr (unpack link)
                                >> putStr " " >> putStr "Caught " >> print e
+
+collection2Persistent :: Document -> IO ()
+collection2Persistent collection = do
+  let allProperties = filterSubnodes $ collection ^.. memberResources . entire
+  let propertyMap = foldr ins M.empty allProperties
+  forM_ (M.toList propertyMap) $ \(propName, (exampleL, num :: Integer)) -> do
+    putStr "      " >> putStr (show propName) >> putStr " "
+    putStr (show num) >> putStr " " >> print exampleL
+  where
+    filterSubnodes =  filter $ (/= "properties") . (^. localName)
+    ins e = M.insertWith addExample (e ^. localName) ([e ^. text], 1)
+    addExample (newEx, _) (oldEx, 1) = (oldEx ++ newEx, 2)
+    addExample _          (oldEx, n) = (oldEx, n + 1)
 
 -- | Traversal of an OData service document (an XML Document) focusing on all
 -- collection links. (Follow terminology found in
