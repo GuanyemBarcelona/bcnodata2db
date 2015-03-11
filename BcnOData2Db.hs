@@ -10,15 +10,18 @@ module Main where
 
 import           Control.Applicative
 import           Control.Lens
+import           Control.Monad
+import           Control.Monad.Catch
 import           Control.Monad.IO.Class      (liftIO)
 import           Control.Monad.Logger        (runStderrLoggingT)
-import qualified Data.ByteString.Char8       as B (pack)
+import qualified Data.ByteString.Char8       as B8 (pack)
 import           Data.List
 import           Data.Maybe
-import           Data.Text                   (Text)
+import           Data.Text                   (Text, unpack)
 import           Database.Persist
 import           Database.Persist.Postgresql
 import           Database.Persist.TH
+import           Network                     (withSocketsDo)
 import           Network.HTTP.Conduit
 import           Options.Applicative
 import           Text.XML
@@ -115,21 +118,23 @@ helpMessage =
 -- = Entry point and auxiliary functions
 
 main :: IO ()
-main = execParser options' >>= \(Options d u p) -> do
+main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
   document <- readDocument "OPENDATADIVTER0.xml"
-  let resourceList = document ^.. memberResources . runFold divisioTerritorial
-  print $ length resourceList
+  let resources = document ^.. memberResources . runFold divisioTerritorial
+  print $ length resources
   runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
     liftIO $ flip runSqlPersistMPool pool $ do
       runMigration migrateAll
-      insertMany $ sortBy districtesPrimer resourceList
+      insertMany $ sortBy districtesPrimer resources
   return ()
     where
       districtesPrimer (DivisioTerritorial _ _ _ Nothing _) _ = LT
       districtesPrimer _ (DivisioTerritorial _ _ _ Nothing _) = GT
       districtesPrimer _ _                                    = EQ
       options' = info (helper <*> options) helpMessage
-      pqConnOpts d u p = B.pack $ concat [d, u, p]
+      pqConnOpts d u p = B8.pack $ concat [d, u, p]
+      non2xxStatusExp :: HttpException -> IO ()
+      non2xxStatusExp e = putStr "Caught " >> print e
 
 -- | Traversal of an OData resource collection (an XML Document) focusing on all
 -- member resources (i.e. database rows). (Follow terminology found in
@@ -156,14 +161,31 @@ propText propName = to (findOf elemAndText hasPropName) . to (fmap snd)
 
 readCollectionList :: IO [Text]
 readCollectionList = do
-  document <- readDocument ""
-  return $ document ^.. links
+  service <- readDocument ""
+  return $ service ^.. collectionLinks
+
+serviceDoc2Persistent :: IO ()
+serviceDoc2Persistent = handle readServiceExp $ do
+  service <- readDocument ""
+  let links = service ^.. collectionLinks
+  forM_ links $ \link -> handle (readCollectionExp link) $ do
+    let ulink = unpack link
+    collection <- readDocument ulink
+    let resources = collection ^.. memberResources
+    putStr "    " >> putStr ulink >> putStr " " >> print (length resources)
+    return ()
+  where
+    readServiceExp :: HttpException -> IO ()
+    readServiceExp e = putStr "Caught " >> print e
+    readCollectionExp :: Text -> HttpException -> IO ()
+    readCollectionExp link e =    putStr "    " >> putStr (unpack link)
+                               >> putStr " " >> putStr "Caught " >> print e
 
 -- | Traversal of an OData service document (an XML Document) focusing on all
 -- collection links. (Follow terminology found in
 -- http://bitworking.org/projects/atom/rfc5023.html#rfc.section.1).
-links :: Traversal' Document Text
-links =
+collectionLinks :: Traversal' Document Text
+collectionLinks =
      root
   .  named "service"
   ./ named "workspace"
@@ -173,8 +195,8 @@ links =
 -- | Traversal of an OData service document (an XML Document) focusing on all
 -- collection titles. (Follow terminology found in
 -- http://bitworking.org/projects/atom/rfc5023.html#rfc.section.1).
-titles :: Traversal' Document Text
-titles =
+collectionTitles :: Traversal' Document Text
+collectionTitles =
      root
   .  named "service"
   ./ named "workspace"
@@ -182,10 +204,10 @@ titles =
   ./ named "title"
   .  text
 
+readDocument :: String -> IO Document
+readDocument docName = withSocketsDo $ do
+  result <- simpleHttp (odataBaseUrl ++ docName)
+  return $ parseLBS_ def result
+
 odataBaseUrl :: String
 odataBaseUrl = "http://bcnodata.cloudapp.net:8080/v1/Data/"
-
-readDocument :: String -> IO Document
-readDocument docName = do
-  result <- simpleHttp $ odataBaseUrl ++ docName
-  return $ parseLBS_ def result

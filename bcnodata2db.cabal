@@ -27,9 +27,11 @@ executable bcnodata2db
                   , TypeFamilies
   build-depends: base >=4.7 && <4.8
                , bytestring
+               , exceptions
                , http-conduit
                , lens
                , monad-logger >= 0.3.11.1
+               , network
                , optparse-applicative
                , persistent
                , persistent-postgresql
