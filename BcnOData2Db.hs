@@ -116,6 +116,7 @@ helpMessage =
   <> progDesc "Connect to database and do things"
   <> header "bcnodata2db - Relational-ize OData from http://opendata.bcn.cat"
 
+
 -- |
 -- = Entry point and auxiliary functions
 
@@ -191,10 +192,11 @@ collection2Persistent collection = do
   let allProperties = filterSubnodes $ collection ^.. memberResources . entire
   let propertyMap = foldr ins M.empty allProperties
   forM_ (M.toList propertyMap) $ \(propName, (exampleL, num :: Integer)) -> do
-    putStr "      " >> putStr (show propName) >> putStr " "
+    putStr "      " >> putStr (unpack propName) >> putStr " "
     putStr (show num) >> putStr " " >> print exampleL
   where
-    filterSubnodes =  filter $ (/= "properties") . (^. localName)
+    filterSubnodes =  filter $ not . flip elem excluded . (^. localName)
+    excluded = ["properties", "PartitionKey", "RowKey", "Timestamp", "entityid"]
     ins e = M.insertWith addExample (e ^. localName) ([e ^. text], 1)
     addExample (newEx, _) (oldEx, 1) = (oldEx ++ newEx, 2)
     addExample _          (oldEx, n) = (oldEx, n + 1)
