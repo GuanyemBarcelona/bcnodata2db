@@ -162,10 +162,17 @@ propText propName = to (findOf elemAndText hasPropName) . to (fmap snd)
     elemAndText :: Fold Element (Element, Text)
     elemAndText = plate . runFold ((,) <$> Fold (to id) <*> Fold text)
 
-readCollectionList :: IO [Text]
-readCollectionList = do
-  service <- readDocument ""
-  return $ service ^.. collectionLinks
+readDocument :: String -> IO Document
+readDocument docName = withSocketsDo $ do
+  result <- simpleHttp (odataBaseUrl ++ docName)
+  return $ parseLBS_ def result
+
+odataBaseUrl :: String
+odataBaseUrl = "http://bcnodata.cloudapp.net:8080/v1/Data/"
+
+
+-- |
+-- = service2Persistent
 
 -- | Retrieve all collections in Barcelona ODATA and print information useful
 -- for creating a Persistent description of the data.
@@ -186,6 +193,7 @@ service2Persistent = handle readServiceExp $ do
     readCollectionExp :: Text -> HttpException -> IO ()
     readCollectionExp link e =    putStr "    " >> putStr (unpack link)
                                >> putStr " " >> putStr "Caught " >> print e
+                               >> putStrLn ""
 
 collection2Persistent :: Document -> IO ()
 collection2Persistent collection = do
@@ -224,10 +232,7 @@ collectionTitles =
   ./ named "title"
   .  text
 
-readDocument :: String -> IO Document
-readDocument docName = withSocketsDo $ do
-  result <- simpleHttp (odataBaseUrl ++ docName)
-  return $ parseLBS_ def result
-
-odataBaseUrl :: String
-odataBaseUrl = "http://bcnodata.cloudapp.net:8080/v1/Data/"
+readCollectionList :: IO [Text]
+readCollectionList = do
+  service <- readDocument ""
+  return $ service ^.. collectionLinks
