@@ -16,10 +16,13 @@ import           Control.Monad.Catch
 import           Control.Monad.IO.Class      (liftIO)
 import           Control.Monad.Logger        (runStderrLoggingT)
 import qualified Data.ByteString.Char8       as B8 (pack)
+import           Data.Char
 import           Data.List
 import qualified Data.Map.Strict             as M
 import           Data.Maybe
-import           Data.Text                   (Text, unpack)
+import qualified Data.Set                    as S
+import           Data.Text                   (Text)
+import qualified Data.Text                   as T
 import           Database.Persist
 import           Database.Persist.Postgresql
 import           Database.Persist.TH
@@ -51,10 +54,21 @@ share
       categoria_divisio                 Text
       codi_divisio_territorial_pare     Text Maybe     sqltype=varchar(4)
       url_fitxa_divisio_territorial     Text Maybe
-
       Primary codi_divisio_territorial
       Foreign DivisioTerritorial fkey codi_divisio_territorial_pare
       UniqueUrlFitxaDivisioTerritorial url_fitxa_divisio_territorial !force
+      deriving Show
+
+    OpenDataImmigracioSexe2013
+      codi_barri     Int Maybe -- barris 74 ["44. Vilapicina i la Torre
+                               -- Llobeta","52. la Prosperitat"]
+      codi_districte Int Maybe -- dte 73 ["8","8"]
+      dones          Int       -- 75 ["421","469"]
+      homes          Int       -- 75 ["438","458"]
+      total          Int       -- 75 ["859","927"]
+      comentari      Text Maybe
+      -- Foreign DivisioTerritorial fkey codi_barri
+      UniqueCodiBarri codi_barri !force
       deriving Show
   |]
 
@@ -65,6 +79,32 @@ divisioTerritorial = DivisioTerritorial
   <*> Fold ( propText "categoria_divisio"              . to fromJust )
   <*> Fold ( propText "codi_divisio_territorial_pare"                )
   <*> Fold ( propText "url_fitxa_divisio_territorial"                )
+
+openDataImmigracioSexe2013 :: ReifiedFold Element OpenDataImmigracioSexe2013
+openDataImmigracioSexe2013 = OpenDataImmigracioSexe2013
+  <$> Fold ( propText "barris" . to handleComment . toTakeNumPrefix . toRead )
+  <*> Fold ( propText "dte"    . toRead                                      )
+  <*> Fold ( propText "dones"  . toRead . to fromJust                        )
+  <*> Fold ( propText "homes"  . toRead . to fromJust                        )
+  <*> Fold ( propText "total"  . toRead . to fromJust                        )
+  <*> Fold ( propText "barris" . to handleComment'                           )
+  where
+    handleComment  (Just "No consta") = Nothing
+    handleComment  b                  = b
+    handleComment' (Just "No consta") = Just "Barri no consta"
+    handleComment' _                  = Nothing
+
+
+-- |
+-- = Helper functions for defining OData collection folds
+
+toRead :: (Contravariant f, Profunctor p, Read b, Functor f1) =>
+          p (f1 b) (f (f1 b)) -> p (f1 Text) (f (f1 Text))
+toRead = to (fmap T.unpack) . to (fmap read)
+
+toTakeNumPrefix :: (Contravariant f, Profunctor p, Functor f1) =>
+                   Optical' p p f (f1 Text) (f1 Text)
+toTakeNumPrefix = to $ fmap (T.takeWhile isNumber)
 
 
 -- |
@@ -122,13 +162,15 @@ helpMessage =
 
 main :: IO ()
 main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
-  document <- readDocument "OPENDATADIVTER0.xml"
+  document <- readDocument "OPENDATADIVTER0"
   let resources = document ^.. memberResources . runFold divisioTerritorial
-  print $ length resources
+  document' <- readDocument "OPENDATAIMMIGRACIOSEXE2013"
+  let resources' = document' ^.. memberResources . runFold openDataImmigracioSexe2013
   runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
     liftIO $ flip runSqlPersistMPool pool $ do
       runMigration migrateAll
       insertMany $ sortBy districtesPrimer resources
+      insertMany resources'
   return ()
     where
       districtesPrimer (DivisioTerritorial _ _ _ Nothing _) _ = LT
@@ -149,6 +191,16 @@ memberResources =
   ./ named "entry"
   ./ named "content"
   ./ named "properties"
+  . filtered hasNonTrivialProperty
+  where
+    hasNonTrivialProperty :: Element -> Bool
+    hasNonTrivialProperty e = any (`S.notMember` excluded) (subnodes e)
+    subnodes :: Element -> [Text]
+    subnodes e = e ^.. entire . localName
+
+excluded :: S.Set Text
+excluded = S.fromList [ "properties", "PartitionKey", "RowKey"
+                      , "Timestamp", "entityid" ]
 
 -- | Fold on XML Element's representing the properties (an XML Element called
 -- "properties") of an OData resource. Given a property name, it returns the
@@ -170,6 +222,9 @@ readDocument docName = withSocketsDo $ do
 odataBaseUrl :: String
 odataBaseUrl = "http://bcnodata.cloudapp.net:8080/v1/Data/"
 
+-- collectionList :: [forall a. ReifiedFold Element a]
+-- collectionList = [ _OPENDATAIMMIGRACIOSEXE2013, divisioTerritorial]
+
 
 -- |
 -- = service2Persistent
@@ -181,7 +236,7 @@ service2Persistent = handle readServiceExp $ do
   service <- readDocument ""
   let links = service ^.. collectionLinks
   forM_ links $ \link -> handle (readCollectionExp link) $ do
-    let ulink = unpack link
+    let ulink = T.unpack link
     collection <- readDocument ulink
     putStr "    " >> putStrLn ulink
     collection2Persistent collection
@@ -191,20 +246,19 @@ service2Persistent = handle readServiceExp $ do
     readServiceExp :: HttpException -> IO ()
     readServiceExp e = putStr "Caught " >> print e
     readCollectionExp :: Text -> HttpException -> IO ()
-    readCollectionExp link e =    putStr "    " >> putStr (unpack link)
+    readCollectionExp link e =    putStr "    " >> putStr (T.unpack link)
                                >> putStr " " >> putStr "Caught " >> print e
                                >> putStrLn ""
 
 collection2Persistent :: Document -> IO ()
 collection2Persistent collection = do
-  let allProperties = filterSubnodes $ collection ^.. memberResources . entire
+  let allProperties = collection ^.. memberResources.entire.filtered nonTrivial
   let propertyMap = foldr ins M.empty allProperties
   forM_ (M.toList propertyMap) $ \(propName, (exampleL, num :: Integer)) -> do
-    putStr "      " >> putStr (unpack propName) >> putStr " "
+    putStr "      " >> putStr (T.unpack propName) >> putStr " "
     putStr (show num) >> putStr " " >> print exampleL
   where
-    filterSubnodes =  filter $ not . flip elem excluded . (^. localName)
-    excluded = ["properties", "PartitionKey", "RowKey", "Timestamp", "entityid"]
+    nonTrivial e = S.notMember (e ^. localName) excluded
     ins e = M.insertWith addExample (e ^. localName) ([e ^. text], 1)
     addExample (newEx, _) (oldEx, 1) = (oldEx ++ newEx, 2)
     addExample _          (oldEx, n) = (oldEx, n + 1)
