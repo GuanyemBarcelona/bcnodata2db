@@ -60,15 +60,14 @@ share
       deriving Show
 
     OpenDataImmigracioSexe2013
-      codi_barri     Int Maybe -- barris 74 ["44. Vilapicina i la Torre
-                               -- Llobeta","52. la Prosperitat"]
-      codi_districte Int Maybe -- dte 73 ["8","8"]
-      dones          Int       -- 75 ["421","469"]
-      homes          Int       -- 75 ["438","458"]
-      total          Int       -- 75 ["859","927"]
-      comentari      Text Maybe
+      codi_barri      Int       -- barris 74 ["44. Vilapicina i la Torre
+                                --            Llobeta","52. la Prosperitat"]
+      codi_districte  Int Maybe -- dte 73 ["8","8"]
+      dones           Int       -- 75 ["421","469"]
+      homes           Int       -- 75 ["438","458"]
+      total           Int       -- 75 ["859","927"]
       -- Foreign DivisioTerritorial fkey codi_barri
-      UniqueCodiBarri codi_barri !force
+      Primary codi_barri
       deriving Show
   |]
 
@@ -82,17 +81,15 @@ divisioTerritorial = DivisioTerritorial
 
 openDataImmigracioSexe2013 :: ReifiedFold Element OpenDataImmigracioSexe2013
 openDataImmigracioSexe2013 = OpenDataImmigracioSexe2013
-  <$> Fold ( propText "barris" . to handleComment . toTakeNumPrefix . toRead )
-  <*> Fold ( propText "dte"    . toRead                                      )
-  <*> Fold ( propText "dones"  . toRead . to fromJust                        )
-  <*> Fold ( propText "homes"  . toRead . to fromJust                        )
-  <*> Fold ( propText "total"  . toRead . to fromJust                        )
-  <*> Fold ( propText "barris" . to handleComment'                           )
+  <$> Fold ( propText "barris"
+             . to handleNoConsta . toTakeNumPrefix . toRead . to fromJust )
+  <*> Fold ( propText "dte"    . toRead                                   )
+  <*> Fold ( propText "dones"  . toRead . to fromJust                     )
+  <*> Fold ( propText "homes"  . toRead . to fromJust                     )
+  <*> Fold ( propText "total"  . toRead . to fromJust                     )
   where
-    handleComment  (Just "No consta") = Nothing
-    handleComment  b                  = b
-    handleComment' (Just "No consta") = Just "Barri no consta"
-    handleComment' _                  = Nothing
+    handleNoConsta (Just "No consta") = Just "0"
+    handleNoConsta b                  = b
 
 
 -- |
@@ -165,7 +162,7 @@ main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
   document <- readDocument "OPENDATADIVTER0"
   let resources = document ^.. memberResources . runFold divisioTerritorial
   document' <- readDocument "OPENDATAIMMIGRACIOSEXE2013"
-  let resources' = document' ^.. memberResources . runFold openDataImmigracioSexe2013
+  let resources' = document' ^.. memberResourcesWith "barris" . runFold openDataImmigracioSexe2013
   runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
     liftIO $ flip runSqlPersistMPool pool $ do
       runMigration migrateAll
@@ -191,7 +188,7 @@ memberResources =
   ./ named "entry"
   ./ named "content"
   ./ named "properties"
-  . filtered hasNonTrivialProperty
+  .  filtered hasNonTrivialProperty
   where
     hasNonTrivialProperty :: Element -> Bool
     hasNonTrivialProperty e = any (`S.notMember` excluded) (subnodes e)
@@ -201,6 +198,21 @@ memberResources =
 excluded :: S.Set Text
 excluded = S.fromList [ "properties", "PartitionKey", "RowKey"
                       , "Timestamp", "entityid" ]
+
+-- | Traversal of an OData resource collection (an XML Document) focusing on all
+-- member resources (i.e. database rows) that contain the specified
+-- property. (Follow terminology found in
+-- http://bitworking.org/projects/atom/rfc5023.html#rfc.section.1).
+memberResourcesWith :: Text -> Traversal' Document Element
+memberResourcesWith propertyName =
+     root
+  .  named "feed"
+  ./ named "entry"
+  ./ named "content"
+  ./ named "properties"
+  .  filtered hasProperty
+  where
+    hasProperty e = propertyName `elem` e ^.. entire . localName
 
 -- | Fold on XML Element's representing the properties (an XML Element called
 -- "properties") of an OData resource. Given a property name, it returns the
