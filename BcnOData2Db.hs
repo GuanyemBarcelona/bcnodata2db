@@ -95,12 +95,10 @@ openDataImmigracioSexe2013 = OpenDataImmigracioSexe2013
 -- |
 -- = Helper functions for defining OData collection folds
 
-toRead :: (Contravariant f, Profunctor p, Read b, Functor f1) =>
-          p (f1 b) (f (f1 b)) -> p (f1 Text) (f (f1 Text))
+toRead :: (Read a, Functor f) => Fold (f Text) (f a)
 toRead = to (fmap T.unpack) . to (fmap read)
 
-toTakeNumPrefix :: (Contravariant f, Profunctor p, Functor f1) =>
-                   Optical' p p f (f1 Text) (f1 Text)
+toTakeNumPrefix :: Functor f => Fold (f Text) (f Text)
 toTakeNumPrefix = to $ fmap (T.takeWhile isNumber)
 
 
