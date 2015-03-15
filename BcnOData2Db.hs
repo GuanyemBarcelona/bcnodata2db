@@ -1,14 +1,12 @@
-{-# LANGUAGE GADTs                      #-}
-{-# LANGUAGE GeneralizedNewtypeDeriving #-}
-{-# LANGUAGE MultiParamTypeClasses      #-}
-{-# LANGUAGE OverloadedStrings          #-}
-{-# LANGUAGE QuasiQuotes                #-}
-{-# LANGUAGE RankNTypes                 #-}
-{-# LANGUAGE ScopedTypeVariables        #-}
-{-# LANGUAGE TemplateHaskell            #-}
-{-# LANGUAGE TypeFamilies               #-}
+{-# LANGUAGE GADTs                 #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedStrings     #-}
+{-# LANGUAGE RankNTypes            #-}
+{-# LANGUAGE ScopedTypeVariables   #-}
+{-# LANGUAGE TypeFamilies          #-}
 module Main where
 
+import           BcnOData.Persistent
 import           Control.Applicative
 import           Control.Lens
 import           Control.Monad
@@ -25,51 +23,12 @@ import           Data.Text                   (Text)
 import qualified Data.Text                   as T
 import           Database.Persist
 import           Database.Persist.Postgresql
-import           Database.Persist.TH
 import           Network                     (withSocketsDo)
 import           Network.HTTP.Conduit
 import           Options.Applicative
 import           Text.XML
 import           Text.XML.Lens
 
-
--- |
--- = OData resource collections
-
-share
-  [ mkPersist sqlSettings { mpsPrefixFields   = True
-                          , mpsGeneric        = False
-                          , mpsGenerateLenses = True
-                          }
-  , mkMigrate "migrateAll"
-  ]
-  [persistLowerCase|
-    DivisioTerritorial
-      -- We can use enumerated types in persistent, but they require a more
-      -- involved use of TH that breaks Emacs flycheck. They are translated into
-      -- SQL varchars anyway.
-      -- categoria_divisio CategoriaDivisio
-      codi_divisio_territorial          Text           sqltype=varchar(4)
-      nom_divisio_territorial           Text
-      categoria_divisio                 Text
-      codi_divisio_territorial_pare     Text Maybe     sqltype=varchar(4)
-      url_fitxa_divisio_territorial     Text Maybe
-      Primary codi_divisio_territorial
-      Foreign DivisioTerritorial fkey codi_divisio_territorial_pare
-      UniqueUrlFitxaDivisioTerritorial url_fitxa_divisio_territorial !force
-      deriving Show
-
-    OpenDataImmigracioSexe2013
-      codi_barri      Int       -- barris 74 ["44. Vilapicina i la Torre
-                                --            Llobeta","52. la Prosperitat"]
-      codi_districte  Int Maybe -- dte 73 ["8","8"]
-      dones           Int       -- 75 ["421","469"]
-      homes           Int       -- 75 ["438","458"]
-      total           Int       -- 75 ["859","927"]
-      -- Foreign DivisioTerritorial fkey codi_barri
-      Primary codi_barri
-      deriving Show
-  |]
 
 divisioTerritorial :: ReifiedFold Element DivisioTerritorial
 divisioTerritorial = DivisioTerritorial

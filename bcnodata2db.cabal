@@ -17,7 +17,7 @@ cabal-version:       >=1.10
 
 executable bcnodata2db
   main-is:             BcnOData2Db.hs
-  -- other-modules:       
+  other-modules:       BcnOData.Persistent
   other-extensions: GADTs
                   , GeneralizedNewtypeDeriving
                   , MultiParamTypeClasses
