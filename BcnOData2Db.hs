@@ -63,8 +63,8 @@ collections =
         <*> Fold ( propText "nom_divisio_territorial"  . to fromJust )
         )
       [ Districtes 0 "DISTRICTE NO ASSIGNAT" ]
-    ),
-    (
+    )
+  , (
       "OPENDATADIVTER0",
       Just "categoria_divisio", Just "Barri",
       MkAC (
@@ -81,19 +81,49 @@ collections =
         )
       [ Barris 0 "BARRI NO ASSIGNAT" Nothing Nothing ]
     )
+  , ( "OPENDATAIMMIGRACIOSEXE2013",
+      Just "barris", Nothing,
+      MkAC (
+        let handleNoConsta (Just "No consta") = Just "0"
+            handleNoConsta b                  = b
+        in
+          MigrantsPerSexe
+          <$> Fold (   propText "barris"
+                     . to handleNoConsta
+                     . toTakeNumPrefix
+                     . toRead
+                     . to fromJust                              )
+          <*> Fold (   to (const 2013)                          )
+          <*> Fold (   to (const "I")                           )
+          <*> Fold (   propText "dte"    . toRead               )
+          <*> Fold (   propText "dones"  . toRead . to fromJust )
+          <*> Fold (   propText "homes"  . toRead . to fromJust )
+          <*> Fold (   propText "total"  . toRead . to fromJust )
+        )
+      []
+    )
+  , ( "OPENDATAIMMIGRACIOSEXE2012",
+      Just "barris", Nothing,
+      MkAC (
+        let handleNoConsta (Just "No consta") = Just "0"
+            handleNoConsta b                  = b
+        in
+          MigrantsPerSexe
+          <$> Fold (   propText "barris"
+                     . to handleNoConsta
+                     . toTakeNumPrefix
+                     . toRead
+                     . to fromJust                              )
+          <*> Fold (   to (const 2012)                          )
+          <*> Fold (   to (const "I")                           )
+          <*> Fold (   propText "dte"    . toRead               )
+          <*> Fold (   propText "dones"  . toRead . to fromJust )
+          <*> Fold (   propText "homes"  . toRead . to fromJust )
+          <*> Fold (   propText "total"  . toRead . to fromJust )
+        )
+      []
+    )
   ]
-
-openDataImmigracioSexe2013 :: ReifiedFold Element OpenDataImmigracioSexe2013
-openDataImmigracioSexe2013 = OpenDataImmigracioSexe2013
-  <$> Fold ( propText "barris"
-             . to handleNoConsta . toTakeNumPrefix . toRead . to fromJust )
-  <*> Fold ( propText "dte"    . toRead                                   )
-  <*> Fold ( propText "dones"  . toRead . to fromJust                     )
-  <*> Fold ( propText "homes"  . toRead . to fromJust                     )
-  <*> Fold ( propText "total"  . toRead . to fromJust                     )
-  where
-    handleNoConsta (Just "No consta") = Just "0"
-    handleNoConsta b                  = b
 
 toRead :: (Read a, Functor f) => Fold (f Text) (f a)
 toRead = to (fmap T.unpack) . to (fmap read)
@@ -161,12 +191,6 @@ main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
     liftIO $ flip runSqlPersistMPool pool $ do
       runMigration migrateAll
       mapM_ updateDb collections
-  document' <- readDocument "OPENDATAIMMIGRACIOSEXE2013"
-  let resources' = document' ^.. memberResourcesWithSome "barris" . runFold openDataImmigracioSexe2013
-  runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
-    liftIO $ flip runSqlPersistMPool pool $ do
-      runMigration migrateAll
-      insertMany resources'
   return ()
     where
       updateDb :: ( MonadBaseControl IO m, MonadLogger m, MonadIO m )
