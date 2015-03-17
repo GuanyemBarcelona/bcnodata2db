@@ -38,9 +38,8 @@ import           Text.XML.Lens
 data AnyCollection
   = forall r. (PersistEntity r, PersistEntityBackend r ~ SqlBackend)
     =>
-    MkAC ( ReifiedFold Element r -- Reified fold for getting resources
-         , [r]                   -- List of manually inserted resources
-         )
+    MkAC (ReifiedFold Element r) -- Reified fold for getting resources
+         [r]                     -- List of manually inserted resources
 
 collections ::
   [
@@ -61,9 +60,9 @@ collections =
                    . to (fmap (T.drop 2))
                    . toRead
                    . to fromJust                                     )
-        <*> Fold ( propText "nom_divisio_territorial"  . to fromJust ),
-        [ Districtes 0 "DISTRICTE NO ASSIGNAT" ]
+        <*> Fold ( propText "nom_divisio_territorial"  . to fromJust )
         )
+      [ Districtes 0 "DISTRICTE NO ASSIGNAT" ]
     ),
     (
       "OPENDATADIVTER0",
@@ -78,9 +77,9 @@ collections =
         <*> Fold (   propText "codi_divisio_territorial_pare"
                    . to (fmap (T.drop 2))
                    . toRead                                            )
-        <*> Fold ( propText "url_fitxa_divisio_territorial"            ),
-        [ Barris 0 "BARRI NO ASSIGNAT" Nothing Nothing ]
+        <*> Fold ( propText "url_fitxa_divisio_territorial"            )
         )
+      [ Barris 0 "BARRI NO ASSIGNAT" Nothing Nothing ]
     )
   ]
 
@@ -177,7 +176,7 @@ main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
                   , Maybe Text
                   , AnyCollection )
                   -> ReaderT SqlBackend m ()
-      updateDb (docName, prop, val, MkAC (fold, moreResources)) = do
+      updateDb (docName, prop, val, MkAC fold  moreResources) = do
         doc <- liftIO $ readDocument docName
         let resources = doc ^.. filteringTraversal prop val . runFold fold
         insertMany_ $ resources ++ moreResources
