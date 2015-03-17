@@ -40,6 +40,7 @@ data AnyCollection
     =>
     MkAC (ReifiedFold Element r) -- Reified fold for getting resources
          [r]                     -- List of manually inserted resources
+         [Filter r]              -- Filter to select resources to delete
 
 collections ::
   [
@@ -62,7 +63,7 @@ collections =
                    . to fromJust                                     )
         <*> Fold ( propText "nom_divisio_territorial"  . to fromJust )
         )
-      [ Districtes 0 "DISTRICTE NO ASSIGNAT" ]
+      [ Districtes 0 "DISTRICTE NO ASSIGNAT" ] []
     )
   , (
       "OPENDATADIVTER0",
@@ -79,7 +80,7 @@ collections =
                    . toRead                                            )
         <*> Fold ( propText "url_fitxa_divisio_territorial"            )
         )
-      [ Barris 0 "BARRI NO ASSIGNAT" Nothing Nothing ]
+      [ Barris 0 "BARRI NO ASSIGNAT" Nothing Nothing ] []
     )
   , ( "OPENDATAIMMIGRACIOSEXE2013",
       Just "barris", Nothing,
@@ -100,7 +101,7 @@ collections =
           <*> Fold (   propText "homes"  . toRead . to fromJust )
           <*> Fold (   propText "total"  . toRead . to fromJust )
         )
-      []
+      [] []
     )
   , ( "OPENDATAIMMIGRACIOSEXE2012",
       Just "barris", Nothing,
@@ -121,7 +122,7 @@ collections =
           <*> Fold (   propText "homes"  . toRead . to fromJust )
           <*> Fold (   propText "total"  . toRead . to fromJust )
         )
-      []
+      [] []
     )
   ]
 
@@ -190,20 +191,24 @@ main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
   runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
     liftIO $ flip runSqlPersistMPool pool $ do
       runMigration migrateAll
-      mapM_ updateDb collections
+      -- Delete (usually all) table rows before inserting.
+      -- Delete in reverse order due to foreign key dependencies.
+      mapM_ deleteAll $ reverse collections
+      mapM_ insertAll collections
   return ()
     where
-      updateDb :: ( MonadBaseControl IO m, MonadLogger m, MonadIO m )
-                  =>
-                  ( String
-                  , Maybe Text
-                  , Maybe Text
-                  , AnyCollection )
-                  -> ReaderT SqlBackend m ()
-      updateDb (docName, prop, val, MkAC fold  moreResources) = do
+      insertAll, deleteAll :: (MonadBaseControl IO m, MonadLogger m, MonadIO m)
+                =>
+                ( String
+                , Maybe Text
+                , Maybe Text
+                , AnyCollection )
+                -> ReaderT SqlBackend m ()
+      insertAll (docName, prop, val, MkAC fold moreResources _) = do
         doc <- liftIO $ readDocument docName
         let resources = doc ^.. filteringTraversal prop val . runFold fold
         insertMany_ $ resources ++ moreResources
+      deleteAll (_, _, _, MkAC _ _ deleteFilter) = deleteWhere deleteFilter
       filteringTraversal Nothing _         = memberResources
       filteringTraversal (Just p) Nothing  = memberResourcesWithSome p
       filteringTraversal (Just p) (Just v) = memberResourcesWith p v
