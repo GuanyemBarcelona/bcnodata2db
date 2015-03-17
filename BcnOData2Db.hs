@@ -36,36 +36,51 @@ import           Text.XML.Lens
 -- = OData collection folds
 
 data AnyCollection
-  = forall e. (PersistEntity e, PersistEntityBackend e ~ SqlBackend)
+  = forall r. (PersistEntity r, PersistEntityBackend r ~ SqlBackend)
     =>
-    MkAC (ReifiedFold Element e)
+    MkAC ( ReifiedFold Element r -- Reified fold for getting resources
+         , [r]                   -- List of manually inserted resources
+         )
 
-collections :: [(String, Text, Text, AnyCollection)]
+collections ::
+  [
+    ( String                    -- URL suffix
+    , Maybe Text                -- Property that needs to be present
+    , Maybe Text                -- Value that preceding property needs to take
+    , AnyCollection             -- Means to get all resources of a collection
+    )
+  ]
 collections =
   [
     (
       "OPENDATADIVTER0",
-      "categoria_divisio", "Districte",
-      MkAC $ Districtes
-      <$> Fold (   propText "codi_divisio_territorial"
-                 . to (fmap (T.drop 2))
-                 . toRead
-                 . to fromJust                                     )
-      <*> Fold ( propText "nom_divisio_territorial"  . to fromJust )
+      Just "categoria_divisio", Just "Districte",
+      MkAC (
+        Districtes
+        <$> Fold (   propText "codi_divisio_territorial"
+                   . to (fmap (T.drop 2))
+                   . toRead
+                   . to fromJust                                     )
+        <*> Fold ( propText "nom_divisio_territorial"  . to fromJust ),
+        [ Districtes 0 "DISTRICTE NO ASSIGNAT" ]
+        )
     ),
     (
       "OPENDATADIVTER0",
-      "categoria_divisio", "Barri",
-      MkAC $ Barris
-      <$> Fold (   propText "codi_divisio_territorial"
-                 . to (fmap (T.drop 2))
-                 . toRead
-                 . to fromJust                                       )
-      <*> Fold (   propText "nom_divisio_territorial"  . to fromJust )
-      <*> Fold (   propText "codi_divisio_territorial_pare"
-                 . to (fmap (T.drop 2))
-                 . toRead                                            )
-      <*> Fold ( propText "url_fitxa_divisio_territorial"            )
+      Just "categoria_divisio", Just "Barri",
+      MkAC (
+        Barris
+        <$> Fold (   propText "codi_divisio_territorial"
+                   . to (fmap (T.drop 2))
+                   . toRead
+                   . to fromJust                                       )
+        <*> Fold (   propText "nom_divisio_territorial"  . to fromJust )
+        <*> Fold (   propText "codi_divisio_territorial_pare"
+                   . to (fmap (T.drop 2))
+                   . toRead                                            )
+        <*> Fold ( propText "url_fitxa_divisio_territorial"            ),
+        [ Barris 0 "BARRI NO ASSIGNAT" Nothing Nothing ]
+        )
     )
   ]
 
@@ -155,12 +170,20 @@ main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
       insertMany resources'
   return ()
     where
-      updateDb :: (MonadBaseControl IO m, MonadLogger m, MonadIO m) =>
-                  (String, Text, Text, AnyCollection) -> ReaderT SqlBackend m ()
-      updateDb (docName, mProperty, mValue, MkAC collection) = do
-        document <- liftIO $ readDocument docName
-        let resources = document ^.. memberResourcesWith mProperty mValue . runFold collection
-        insertMany_ resources
+      updateDb :: ( MonadBaseControl IO m, MonadLogger m, MonadIO m )
+                  =>
+                  ( String
+                  , Maybe Text
+                  , Maybe Text
+                  , AnyCollection )
+                  -> ReaderT SqlBackend m ()
+      updateDb (docName, prop, val, MkAC (fold, moreResources)) = do
+        doc <- liftIO $ readDocument docName
+        let resources = doc ^.. filteringTraversal prop val . runFold fold
+        insertMany_ $ resources ++ moreResources
+      filteringTraversal Nothing _         = memberResources
+      filteringTraversal (Just p) Nothing  = memberResourcesWithSome p
+      filteringTraversal (Just p) (Just v) = memberResourcesWith p v
       options' = info (helper <*> options) helpMessage
       pqConnOpts d u p = B8.pack $ concat [d, u, p]
       non2xxStatusExp :: HttpException -> IO ()
@@ -184,8 +207,8 @@ memberResources =
     subnodes e = e ^.. entire . localName
 
 excluded :: S.Set Text
-excluded = S.fromList [ "properties", "PartitionKey", "RowKey"
-                      , "Timestamp", "entityid" ]
+excluded =
+  S.fromList [ "properties", "PartitionKey", "RowKey", "Timestamp", "entityid" ]
 
 -- | Traversal of an OData resource collection (an XML Document) focusing on all
 -- member resources (i.e. database rows) that contain the specified
@@ -209,9 +232,9 @@ memberResourcesWith propertyName value_ =
   ./ named "entry"
   ./ named "content"
   ./ named "properties"
-  .  filtered hasPropertyWithValue
+  .  filtered hasPropWithValue
   where
-    hasPropertyWithValue e = e ^? plate . named propertyName . text == Just value_
+    hasPropWithValue e = e ^? plate . named propertyName . text == Just value_
 
 -- | Fold on XML Element's representing the properties (an XML Element called
 -- "properties") of an OData resource. Given a property name, it returns the
