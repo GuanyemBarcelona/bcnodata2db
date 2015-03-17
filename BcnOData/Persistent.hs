@@ -26,19 +26,33 @@ share
   , mkMigrate "migrateAll"
   ]
   [persistLowerCase|
-    DivisioTerritorial
-      -- We can use enumerated types in persistent, but they require a more
-      -- involved use of TH that breaks Emacs flycheck. They are translated into
-      -- SQL varchars anyway.
-      -- categoria_divisio CategoriaDivisio
-      codi_divisio_territorial          Text           sqltype=varchar(4)
-      nom_divisio_territorial           Text
-      categoria_divisio                 Text
-      codi_divisio_territorial_pare     Text Maybe     sqltype=varchar(4)
-      url_fitxa_divisio_territorial     Text Maybe
-      Primary codi_divisio_territorial
-      Foreign DivisioTerritorial fkey codi_divisio_territorial_pare
-      UniqueUrlFitxaDivisioTerritorial url_fitxa_divisio_territorial !force
+    FontsDeDades
+      font          Text        -- Usually a URL, or simply an id string
+      tipus         Text        -- E.g. "OData-XML"
+      taula         Text        -- Where the data is stored
+      origen        Text        -- Institution that generated the data set
+      transformacio Text Maybe
+      url1          Text Maybe  -- Pointer to metainfo with, e.g, a description
+                                -- of every field
+      url2          Text Maybe
+      url3          Text Maybe
+      Primary font
+
+    Districtes
+      codi_districte        Int
+      nom_districte         Text
+      Primary codi_districte
+      UniqueNomDistricte nom_districte
+      deriving Show
+
+    Barris
+      codi_barri       Int
+      nom_barri        Text
+      codi_districte   Int Maybe
+      url_fitxa_barri  Text Maybe
+      Primary codi_barri
+      UniqueNomBarri nom_barri
+      Foreign Districtes fkey codi_districte
       deriving Show
 
     -- http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/
@@ -53,6 +67,8 @@ share
       homes            Int
       total            Int
       Primary codi_barri any_ tipus
+      Foreign Barris fkeyBarri codi_districte
+      Foreign Districtes fkeyDistricte codi_districte
       deriving Show
 
     OpenDataImmigracioSexe2013

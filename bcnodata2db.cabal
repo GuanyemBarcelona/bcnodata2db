@@ -31,6 +31,7 @@ executable bcnodata2db
                , exceptions
                , http-conduit
                , lens
+               , monad-control >= 0.3.3.0
                , monad-logger >= 0.3.11.1
                , network
                , optparse-applicative

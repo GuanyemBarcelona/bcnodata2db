@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleContexts      #-}
 {-# LANGUAGE GADTs                 #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE OverloadedStrings     #-}
@@ -6,16 +7,17 @@
 {-# LANGUAGE TypeFamilies          #-}
 module Main where
 
+import Control.Monad.Trans.Reader
 import           BcnOData.Persistent
 import           Control.Applicative
 import           Control.Lens
 import           Control.Monad
 import           Control.Monad.Catch
-import           Control.Monad.IO.Class      (liftIO)
-import           Control.Monad.Logger        (runStderrLoggingT)
+import           Control.Monad.IO.Class      (liftIO, MonadIO)
+import           Control.Monad.Logger        (MonadLogger, runStderrLoggingT)
+import           Control.Monad.Trans.Control
 import qualified Data.ByteString.Char8       as B8 (pack)
 import           Data.Char
-import           Data.List
 import qualified Data.Map.Strict             as M
 import           Data.Maybe
 import qualified Data.Set                    as S
@@ -30,13 +32,42 @@ import           Text.XML
 import           Text.XML.Lens
 
 
-divisioTerritorial :: ReifiedFold Element DivisioTerritorial
-divisioTerritorial = DivisioTerritorial
-  <$> Fold ( propText "codi_divisio_territorial"       . to fromJust )
-  <*> Fold ( propText "nom_divisio_territorial"        . to fromJust )
-  <*> Fold ( propText "categoria_divisio"              . to fromJust )
-  <*> Fold ( propText "codi_divisio_territorial_pare"                )
-  <*> Fold ( propText "url_fitxa_divisio_territorial"                )
+-- |
+-- = OData collection folds
+
+data AnyCollection
+  = forall e. (PersistEntity e, PersistEntityBackend e ~ SqlBackend)
+    =>
+    MkAC (ReifiedFold Element e)
+
+collections :: [(String, Text, Text, AnyCollection)]
+collections =
+  [
+    (
+      "OPENDATADIVTER0",
+      "categoria_divisio", "Districte",
+      MkAC $ Districtes
+      <$> Fold (   propText "codi_divisio_territorial"
+                 . to (fmap (T.drop 2))
+                 . toRead
+                 . to fromJust                                     )
+      <*> Fold ( propText "nom_divisio_territorial"  . to fromJust )
+    ),
+    (
+      "OPENDATADIVTER0",
+      "categoria_divisio", "Barri",
+      MkAC $ Barris
+      <$> Fold (   propText "codi_divisio_territorial"
+                 . to (fmap (T.drop 2))
+                 . toRead
+                 . to fromJust                                       )
+      <*> Fold (   propText "nom_divisio_territorial"  . to fromJust )
+      <*> Fold (   propText "codi_divisio_territorial_pare"
+                 . to (fmap (T.drop 2))
+                 . toRead                                            )
+      <*> Fold ( propText "url_fitxa_divisio_territorial"            )
+    )
+  ]
 
 openDataImmigracioSexe2013 :: ReifiedFold Element OpenDataImmigracioSexe2013
 openDataImmigracioSexe2013 = OpenDataImmigracioSexe2013
@@ -49,10 +80,6 @@ openDataImmigracioSexe2013 = OpenDataImmigracioSexe2013
   where
     handleNoConsta (Just "No consta") = Just "0"
     handleNoConsta b                  = b
-
-
--- |
--- = Helper functions for defining OData collection folds
 
 toRead :: (Read a, Functor f) => Fold (f Text) (f a)
 toRead = to (fmap T.unpack) . to (fmap read)
@@ -116,20 +143,24 @@ helpMessage =
 
 main :: IO ()
 main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
-  document <- readDocument "OPENDATADIVTER0"
-  let resources = document ^.. memberResources . runFold divisioTerritorial
-  document' <- readDocument "OPENDATAIMMIGRACIOSEXE2013"
-  let resources' = document' ^.. memberResourcesWith "barris" . runFold openDataImmigracioSexe2013
   runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
     liftIO $ flip runSqlPersistMPool pool $ do
       runMigration migrateAll
-      insertMany $ sortBy districtesPrimer resources
+      mapM_ updateDb collections
+  document' <- readDocument "OPENDATAIMMIGRACIOSEXE2013"
+  let resources' = document' ^.. memberResourcesWithSome "barris" . runFold openDataImmigracioSexe2013
+  runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
+    liftIO $ flip runSqlPersistMPool pool $ do
+      runMigration migrateAll
       insertMany resources'
   return ()
     where
-      districtesPrimer (DivisioTerritorial _ _ _ Nothing _) _ = LT
-      districtesPrimer _ (DivisioTerritorial _ _ _ Nothing _) = GT
-      districtesPrimer _ _                                    = EQ
+      updateDb :: (MonadBaseControl IO m, MonadLogger m, MonadIO m) =>
+                  (String, Text, Text, AnyCollection) -> ReaderT SqlBackend m ()
+      updateDb (docName, mProperty, mValue, MkAC collection) = do
+        document <- liftIO $ readDocument docName
+        let resources = document ^.. memberResourcesWith mProperty mValue . runFold collection
+        insertMany_ resources
       options' = info (helper <*> options) helpMessage
       pqConnOpts d u p = B8.pack $ concat [d, u, p]
       non2xxStatusExp :: HttpException -> IO ()
@@ -160,8 +191,8 @@ excluded = S.fromList [ "properties", "PartitionKey", "RowKey"
 -- member resources (i.e. database rows) that contain the specified
 -- property. (Follow terminology found in
 -- http://bitworking.org/projects/atom/rfc5023.html#rfc.section.1).
-memberResourcesWith :: Text -> Traversal' Document Element
-memberResourcesWith propertyName =
+memberResourcesWithSome :: Text -> Traversal' Document Element
+memberResourcesWithSome propertyName =
      root
   .  named "feed"
   ./ named "entry"
@@ -170,6 +201,17 @@ memberResourcesWith propertyName =
   .  filtered hasProperty
   where
     hasProperty e = propertyName `elem` e ^.. entire . localName
+
+memberResourcesWith :: Text -> Text -> Traversal' Document Element
+memberResourcesWith propertyName value_ =
+     root
+  .  named "feed"
+  ./ named "entry"
+  ./ named "content"
+  ./ named "properties"
+  .  filtered hasPropertyWithValue
+  where
+    hasPropertyWithValue e = e ^? plate . named propertyName . text == Just value_
 
 -- | Fold on XML Element's representing the properties (an XML Element called
 -- "properties") of an OData resource. Given a property name, it returns the
@@ -190,9 +232,6 @@ readDocument docName = withSocketsDo $ do
 
 odataBaseUrl :: String
 odataBaseUrl = "http://bcnodata.cloudapp.net:8080/v1/Data/"
-
--- collectionList :: [forall a. ReifiedFold Element a]
--- collectionList = [ _OPENDATAIMMIGRACIOSEXE2013, divisioTerritorial]
 
 
 -- |
