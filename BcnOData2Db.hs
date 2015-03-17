@@ -21,6 +21,7 @@ import           Data.Char
 import qualified Data.Map.Strict             as M
 import           Data.Maybe
 import qualified Data.Set                    as S
+import           Data.String
 import           Data.Text                   (Text)
 import qualified Data.Text                   as T
 import           Database.Persist
@@ -85,42 +86,252 @@ collections =
   , ( "OPENDATAIMMIGRACIOSEXE2013",
       Just "barris", Nothing,
       MkAC (
-        let handleNoConsta (Just "No consta") = Just "0"
-            handleNoConsta b                  = b
-        in
-          MigrantsPerSexe
-          <$> Fold (   propText "barris"
-                     . to handleNoConsta
-                     . toTakeNumPrefix
-                     . toRead
-                     . to fromJust                              )
-          <*> Fold (   to (const 2013)                          )
-          <*> Fold (   to (const "I")                           )
-          <*> Fold (   propText "dte"    . toRead               )
-          <*> Fold (   propText "dones"  . toRead . to fromJust )
-          <*> Fold (   propText "homes"  . toRead . to fromJust )
-          <*> Fold (   propText "total"  . toRead . to fromJust )
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                              )
+        <*> Fold (   to (const 2013)                          )
+        <*> Fold (   to (const "I")                           )
+        <*> Fold (   propText "dte"    . toRead               )
+        <*> Fold (   propText "dones"  . toRead . to fromJust )
+        <*> Fold (   propText "homes"  . toRead . to fromJust )
+        <*> Fold (   propText "total"  . toRead . to fromJust )
         )
       [] []
     )
   , ( "OPENDATAIMMIGRACIOSEXE2012",
       Just "barris", Nothing,
       MkAC (
-        let handleNoConsta (Just "No consta") = Just "0"
-            handleNoConsta b                  = b
-        in
-          MigrantsPerSexe
-          <$> Fold (   propText "barris"
-                     . to handleNoConsta
-                     . toTakeNumPrefix
-                     . toRead
-                     . to fromJust                              )
-          <*> Fold (   to (const 2012)                          )
-          <*> Fold (   to (const "I")                           )
-          <*> Fold (   propText "dte"    . toRead               )
-          <*> Fold (   propText "dones"  . toRead . to fromJust )
-          <*> Fold (   propText "homes"  . toRead . to fromJust )
-          <*> Fold (   propText "total"  . toRead . to fromJust )
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                              )
+        <*> Fold (   to (const 2012)                          )
+        <*> Fold (   to (const "I")                           )
+        <*> Fold (   propText "dte"    . toRead               )
+        <*> Fold (   propText "dones"  . toRead . to fromJust )
+        <*> Fold (   propText "homes"  . toRead . to fromJust )
+        <*> Fold (   propText "total"  . toRead . to fromJust )
+        )
+      [] []
+    )
+  , ( "immigraciosexe2011",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2011)                                      )
+        <*> Fold (   to (const "I")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "immigraciosexe2010",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2010)                                      )
+        <*> Fold (   to (const "I")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "immigraciosexe2009",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2009)                                      )
+        <*> Fold (   to (const "I")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "immigraciosexe2008",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2008)                                      )
+        <*> Fold (   to (const "I")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "immigraciosexe2007",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2007)                                      )
+        <*> Fold (   to (const "I")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "OPENDATAEMIGRACIOSEXE2013",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                              )
+        <*> Fold (   to (const 2013)                          )
+        <*> Fold (   to (const "E")                           )
+        <*> Fold (   propText "dte"    . toRead               )
+        <*> Fold (   propText "dones"  . toRead . to fromJust )
+        <*> Fold (   propText "homes"  . toRead . to fromJust )
+        <*> Fold (   propText "total"  . toRead . to fromJust )
+        )
+      [] []
+    )
+  , ( "OPENDATAEMIGRACIOSEXE2012",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                              )
+        <*> Fold (   to (const 2012)                          )
+        <*> Fold (   to (const "E")                           )
+        <*> Fold (   propText "dte"    . toRead               )
+        <*> Fold (   propText "dones"  . toRead . to fromJust )
+        <*> Fold (   propText "homes"  . toRead . to fromJust )
+        <*> Fold (   propText "total"  . toRead . to fromJust )
+        )
+      [] []
+    )
+  , ( "emigraciosexe2011",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2011)                                      )
+        <*> Fold (   to (const "E")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "emigraciosexe2010",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2010)                                      )
+        <*> Fold (   to (const "E")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "emigraciosexe2009",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2009)                                      )
+        <*> Fold (   to (const "E")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "emigraciosexe2008",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2008)                                      )
+        <*> Fold (   to (const "E")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
+        )
+      [] []
+    )
+  , ( "emigraciosexe2007",
+      Just "barris", Nothing,
+      MkAC (
+        MigrantsPerSexe
+        <$> Fold (   propText "barris"
+                   . to handleBarriNoConsta
+                   . toTakeNumPrefix
+                   . toRead
+                   . to fromJust                                          )
+        <*> Fold (   to (const 2007)                                      )
+        <*> Fold (   to (const "E")                                       )
+        <*> Fold (   propText "dte"   . toReadNumWithPeriod               )
+        <*> Fold (   propText "dones" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "homes" . toReadNumWithPeriod . to fromJust )
+        <*> Fold (   propText "total" . toReadNumWithPeriod . to fromJust )
         )
       [] []
     )
@@ -129,8 +340,17 @@ collections =
 toRead :: (Read a, Functor f) => Fold (f Text) (f a)
 toRead = to (fmap T.unpack) . to (fmap read)
 
+toReadNumWithPeriod :: (Functor f) => Fold (f Text) (f Int)
+toReadNumWithPeriod =   to (fmap T.unpack)
+                      . to (fmap (filter isNumber))
+                      . to (fmap read)
+
 toTakeNumPrefix :: Functor f => Fold (f Text) (f Text)
 toTakeNumPrefix = to $ fmap (T.takeWhile isNumber)
+
+handleBarriNoConsta :: (Data.String.IsString a, Eq a) => Maybe a -> Maybe a
+handleBarriNoConsta (Just "No consta") = Just "0"
+handleBarriNoConsta b                  = b
 
 
 -- |

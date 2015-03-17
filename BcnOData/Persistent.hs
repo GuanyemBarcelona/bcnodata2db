@@ -70,15 +70,4 @@ share
       Foreign Barris fkeyBarri codi_districte
       Foreign Districtes fkeyDistricte codi_districte
       deriving Show
-
-    OpenDataImmigracioSexe2013
-      codi_barri      Int       -- barris 74 ["44. Vilapicina i la Torre
-                                --            Llobeta","52. la Prosperitat"]
-      codi_districte  Int Maybe -- dte 73 ["8","8"]
-      dones           Int       -- 75 ["421","469"]
-      homes           Int       -- 75 ["438","458"]
-      total           Int       -- 75 ["859","927"]
-      -- Foreign DivisioTerritorial fkey codi_barri
-      Primary codi_barri
-      deriving Show
   |]
