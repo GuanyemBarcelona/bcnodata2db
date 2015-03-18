@@ -14,7 +14,7 @@ import           Control.Lens
 import           Control.Monad
 import           Control.Monad.Catch
 import           Control.Monad.IO.Class      (liftIO, MonadIO)
-import           Control.Monad.Logger        (MonadLogger, runStderrLoggingT)
+import           Control.Monad.Logger
 import           Control.Monad.Trans.Control
 import qualified Data.ByteString.Char8       as B8 (pack)
 import           Data.Char
@@ -494,34 +494,42 @@ helpMessage =
 
 main :: IO ()
 main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
-  handle someExp $ do
-    runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
+    runNoLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
       liftIO $ flip runSqlPersistMPool pool $ do
         runMigration migrateAll
         -- Delete (usually all) table rows before inserting.
         -- Delete in reverse order due to foreign key dependencies.
+        liftIO $ putStrLn "Deleting rows"
         mapM_ deleteAll $ reverse collections
         mapM_ insertAll collections
     return ()
-  return ()
   where
     -- insertAll also updates meta-info tables
-    insertAll, deleteAll :: (MonadBaseControl IO m, MonadLogger m, MonadIO m)
-      => ( String, MetaInfo, Maybe Text, Maybe Text, AnyCollection )
-      -> ReaderT SqlBackend m ()
+    insertAll :: (MonadBaseControl IO m, MonadLogger m, MonadIO m, MonadCatch m)
+                 => ( String, MetaInfo, Maybe Text, Maybe Text, AnyCollection )
+              -> ReaderT SqlBackend m ()
     insertAll (docName, meta, prop, val, MkAC fold moreResources _) = do
       let font' = odataBaseUrl ++ docName
       doc <- liftIO $ readDocument font'
       let resources = doc ^.. filteringTraversal prop val . runFold fold
-      insertMany_ $ resources ++ moreResources
+      -- Works even with empty list!!
+      let taula' = T.filter (/='"') $ tableName $ head resources
+      liftIO $ putStr "Inserting to " >> putStr (show taula') >> putStr " "
+      handleAll (expWhen "inserting resources") $ do
+        keys <- insertMany $ resources ++ moreResources
+        liftIO $ putStr (show (length keys)) >> putStrLn " rows"
       let MetaInfo o t u1 u2 = meta
-      let taula' = tableName (head resources) -- Works even with empty list!!
       let taula_i_font' = T.concat [taula', " <= ", T.pack font']
       zonedTime <- liftIO getZonedTime
       let now = zonedTimeToUTC zonedTime
-      _ <- upsert (FontsDeDades taula_i_font' "OData-XML" now o t u1 u2) []
-      return ()
-    deleteAll (_, _, _, _, MkAC _ _ deleteFilter) = deleteWhere deleteFilter
+      handleAll (expWhen "inserting meta info data") $ do
+        _ <- upsert (FontsDeDades taula_i_font' "OData-XML" now o t u1 u2) []
+        return ()
+    deleteAll :: (MonadBaseControl IO m, MonadLogger m, MonadIO m, MonadCatch m)
+                 => ( String, MetaInfo, Maybe Text, Maybe Text, AnyCollection )
+              -> ReaderT SqlBackend m ()
+    deleteAll (_, _, _, _, MkAC _ _ deleteFilter) =
+      handleAll (expWhen "deleting resources") $ deleteWhere deleteFilter
     filteringTraversal Nothing _         = memberResources
     filteringTraversal (Just p) Nothing  = memberResourcesWithSome p
     filteringTraversal (Just p) (Just v) = memberResourcesWith p v
@@ -529,8 +537,10 @@ main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
     pqConnOpts d u p = B8.pack $ concat [d, u, p]
     non2xxStatusExp :: HttpException -> IO ()
     non2xxStatusExp e = put2Ln >> putStr "Caught " >> print e >> put2Ln
-    someExp :: (MonadIO m, MonadCatch m) => SomeException -> m ()
-    someExp e = liftIO (put2Ln >> putStr "Caught " >> print e >> put2Ln)
+    expWhen :: (MonadIO m, MonadCatch m) => String -> SomeException -> m ()
+    expWhen msg e = do
+      liftIO $ put2Ln >> putStr "Caught when " >> putStr msg >> putStr " :"
+      liftIO $ print e >> put2Ln
     put2Ln = putStrLn "" >> putStrLn ""
 
 -- | Traversal of an OData resource collection (an XML Document) focusing on all
