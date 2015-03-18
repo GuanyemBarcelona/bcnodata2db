@@ -580,9 +580,10 @@ helpMessage =
   <> header "bcnodata2db - Relational-ize OData from http://opendata.bcn.cat"
 
 
--- |
--- = Entry point and auxiliary functions
-
+-- | = Entry point and auxiliary functions. All SQL commands are run in a single
+-- transaction. This has some advantages (performance, if something fails no
+-- data is destroyed) and one big drawback: if a collection gets broken, we
+-- can't update the other collections.
 main :: IO ()
 main = execParser options' >>= \(Options d u p g) -> handle non2xxStatusExp $ do
     runNoLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
