@@ -32,11 +32,11 @@ share
                                      -- usually a URL
       tipus              Text        -- E.g. "OData-XML"
       darrera_descarrega UTCTime     -- SQL type: DATE
-      origen             Text Maybe  -- Institution that generated the data set
-      transformacio      Text Maybe
-      url1               Text Maybe  -- Pointer to metainfo with, e.g, a
+      origen             Text        -- Institution that generated the data set
+      comentari          Text        -- E.g. limitations, transformations done.
+      url1               Text        -- Pointer to metainfo with, e.g, a
                                      -- description of every field
-      url2               Text Maybe
+      url2               Text
       UniqueTaulaIFont taula_i_font  -- Cannot simply create a composite key
                                      -- with this as repsert fails and need to
                                      -- use upsert

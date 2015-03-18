@@ -38,11 +38,10 @@ import           Text.XML.Lens
 -- = OData collection folds
 
 data MetaInfo
-  = MetaInfo { origen        :: Maybe Text -- Institution that generated the
-                                           -- data set
-             , transformacio :: Maybe Text
-             , url1          :: Maybe Text
-             , url2          :: Maybe Text
+  = MetaInfo { origen        :: Text -- Institution that generated the data set
+             , transformacio :: Text
+             , url1          :: Text
+             , url2          :: Text
              }
 
 data AnyCollection
@@ -65,9 +64,9 @@ collections =
   [
     (
       "OPENDATADIVTER0",
-      MetaInfo Nothing Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/SECTOR_PUBLIC/tauladivadmnou/")
-        (Just "http://w20.bcn.cat/cartobcn/"),
+      MetaInfo "" ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/SECTOR_PUBLIC/tauladivadmnou/"
+        "http://w20.bcn.cat/cartobcn/",
       Just "categoria_divisio", Just "Districte",
       MkAC (
         Districtes
@@ -81,9 +80,9 @@ collections =
     )
   , (
       "OPENDATADIVTER0",
-      MetaInfo Nothing Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/SECTOR_PUBLIC/tauladivadmnou/")
-        (Just "http://w20.bcn.cat/cartobcn/"),
+      MetaInfo "" ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/SECTOR_PUBLIC/tauladivadmnou/"
+        "http://w20.bcn.cat/cartobcn/",
       Just "categoria_divisio", Just "Barri",
       MkAC (
         Barris
@@ -101,10 +100,10 @@ collections =
     )
   , ( "OPENDATAIMMIGRACIOSEXE2013",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -124,10 +123,10 @@ collections =
     )
   , ( "OPENDATAIMMIGRACIOSEXE2012",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -147,10 +146,10 @@ collections =
     )
   , ( "immigraciosexe2011",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -170,10 +169,10 @@ collections =
     )
   , ( "immigraciosexe2010",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -193,10 +192,10 @@ collections =
     )
   , ( "immigraciosexe2009",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -216,10 +215,10 @@ collections =
     )
   , ( "immigraciosexe2008",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -239,10 +238,10 @@ collections =
     )
   , ( "immigraciosexe2007",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -262,10 +261,10 @@ collections =
     )
   , ( "OPENDATAEMIGRACIOSEXE2013",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -285,10 +284,10 @@ collections =
     )
   , ( "OPENDATAEMIGRACIOSEXE2012",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -308,10 +307,10 @@ collections =
     )
   , ( "emigraciosexe2011",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -331,10 +330,10 @@ collections =
     )
   , ( "emigraciosexe2010",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -354,10 +353,10 @@ collections =
     )
   , ( "emigraciosexe2009",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -377,10 +376,10 @@ collections =
     )
   , ( "emigraciosexe2008",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -400,10 +399,10 @@ collections =
     )
   , ( "emigraciosexe2007",
       MetaInfo
-        (Just "Departament d'Estadística. Ajuntament de Barcelona")
-        Nothing
-        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
-        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
+        "Departament d'Estadística. Ajuntament de Barcelona"
+        ""
+        "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/"
+        "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm",
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -431,10 +430,10 @@ collections =
     (\(nomMes, numMes) ->
       ( "OPENDATAATUREVO2013",
         MetaInfo
-          (Just "Departament d'Empresa i Ocupació. Generalitat de Catalunya")
-          Nothing
-          (Just "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/")
-          (Just "http://www.bcn.cat/estadistica/catala/dades/barris/ttreball/atur/evolucio/index.htm"),
+          "Departament d'Empresa i Ocupació. Generalitat de Catalunya"
+          "Estimació"
+          "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/"
+          "http://www.bcn.cat/estadistica/catala/dades/barris/ttreball/atur/evolucio/index.htm",
         Just "gener", Nothing,
         MkAC (
           AturatsEvolucioMensual
@@ -458,10 +457,10 @@ collections =
     (\(nomMes, numMes) ->
       ( "OPENDATAATUREVO2012",
         MetaInfo
-          (Just "Departament d'Empresa i Ocupació. Generalitat de Catalunya")
-          Nothing
-          (Just "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/")
-          (Just "http://www.bcn.cat/estadistica/catala/dades/barris/ttreball/atur/evolucio/index.htm"),
+          "Departament d'Empresa i Ocupació. Generalitat de Catalunya"
+          "Estimació"
+          "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/"
+          "http://www.bcn.cat/estadistica/catala/dades/barris/t/atur/evolucio/index.htm",
         Just "gener", Nothing,
         MkAC (
           AturatsEvolucioMensual
@@ -485,10 +484,10 @@ collections =
     (\(nomMes, numMes) ->
       ( "OPENDATAATUREVO2011",
         MetaInfo
-          (Just "Departament d'Empresa i Ocupació. Generalitat de Catalunya")
-          Nothing
-          (Just "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/")
-          (Just "http://www.bcn.cat/estadistica/catala/dades/barris/ttreball/atur/evolucio/index.htm"),
+          "Departament d'Empresa i Ocupació. Generalitat de Catalunya"
+          "Estimació"
+          "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/"
+          "http://www.bcn.cat/estadistica/catala/dades/barris/ttreball/atur/evolucio/index.htm",
         Just "gener", Nothing,
         MkAC (
           AturatsEvolucioMensual
