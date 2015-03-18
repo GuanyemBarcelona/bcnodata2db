@@ -67,7 +67,18 @@ share
       homes            Int
       total            Int
       Primary codi_barri any_ tipus
-      Foreign Barris fkeyBarri codi_districte
+      Foreign Barris fkeyBarri codi_barri
+      Foreign Districtes fkeyDistricte codi_districte
+      deriving Show
+
+    AturatsEvolucioMensual
+      codi_barri       Int
+      any_             Int
+      mes              Int
+      codi_districte   Int Maybe
+      num              Int
+      Primary codi_barri any_ mes
+      Foreign Barris fkeyBarri codi_barri
       Foreign Districtes fkeyDistricte codi_districte
       deriving Show
   |]

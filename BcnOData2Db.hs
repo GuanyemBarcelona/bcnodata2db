@@ -423,6 +423,96 @@ collections =
     )
   ]
 
+  -- More recent data about unemployment evolution can be found in url2, in
+  -- Excel format.
+
+  ++
+  ( nomsMesos <&>
+    (\(nomMes, numMes) ->
+      ( "OPENDATAATUREVO2013",
+        MetaInfo
+          (Just "Departament d'Empresa i Ocupació. Generalitat de Catalunya")
+          Nothing
+          (Just "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/")
+          (Just "http://www.bcn.cat/estadistica/catala/dades/barris/ttreball/atur/evolucio/index.htm"),
+        Just "gener", Nothing,
+        MkAC (
+          AturatsEvolucioMensual
+          <$> Fold (   propText "barris"
+                     . to handleBarriNoConsta
+                     . toTakeNumPrefix
+                     . toRead
+                     . to fromJust                                          )
+          <*> Fold (   to (const 2013)                                      )
+          <*> Fold (   to (const numMes)                                    )
+          <*> Fold (   propText "dte"   . toRead                            )
+          <*> Fold (   propText nomMes  . toReadNumWithPeriod . to fromJust )
+          )
+        [] []
+      )
+    )
+  )
+
+  ++
+  ( nomsMesos <&>
+    (\(nomMes, numMes) ->
+      ( "OPENDATAATUREVO2012",
+        MetaInfo
+          (Just "Departament d'Empresa i Ocupació. Generalitat de Catalunya")
+          Nothing
+          (Just "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/")
+          (Just "http://www.bcn.cat/estadistica/catala/dades/barris/ttreball/atur/evolucio/index.htm"),
+        Just "gener", Nothing,
+        MkAC (
+          AturatsEvolucioMensual
+          <$> Fold (   propText "barris"
+                     . to handleBarriNoConsta
+                     . toTakeNumPrefix
+                     . toRead
+                     . to fromJust                                          )
+          <*> Fold (   to (const 2012)                                      )
+          <*> Fold (   to (const numMes)                                    )
+          <*> Fold (   propText "dte"   . toRead                            )
+          <*> Fold (   propText nomMes  . toReadNumWithPeriod . to fromJust )
+          )
+        [] []
+      )
+    )
+  )
+
+  ++
+  ( nomsMesos <&>
+    (\(nomMes, numMes) ->
+      ( "OPENDATAATUREVO2011",
+        MetaInfo
+          (Just "Departament d'Empresa i Ocupació. Generalitat de Catalunya")
+          Nothing
+          (Just "http://opendata.bcn.cat/opendata/ca/catalog/OCUPACIO/aturevo/")
+          (Just "http://www.bcn.cat/estadistica/catala/dades/barris/ttreball/atur/evolucio/index.htm"),
+        Just "gener", Nothing,
+        MkAC (
+          AturatsEvolucioMensual
+          <$> Fold (   propText "barris"
+                     . to handleBarriNoConsta
+                     . toTakeNumPrefix
+                     . toRead
+                     . to fromJust                                          )
+          <*> Fold (   to (const 2011)                                      )
+          <*> Fold (   to (const numMes)                                    )
+          <*> Fold (   propText "dte"   . toRead                            )
+          <*> Fold (   propText nomMes  . toReadNumWithPeriod . to fromJust )
+          )
+        [] []
+      )
+    )
+  )
+
+nomsMesos :: [(Text, Int)]
+nomsMesos = [ ("gener", 1), ("febrer", 2), ("març", 3)
+            , ("abril", 4), ("maig", 5), ("juny", 6)
+            , ("juliol", 7), ("agost", 8), ("setembre", 9)
+            , ("octubre", 10), ("novembre", 11), ("desembre", 12) ]
+
 toRead :: (Read a, Functor f) => Fold (f Text) (f a)
 toRead = to (fmap T.unpack) . to (fmap read)
 
