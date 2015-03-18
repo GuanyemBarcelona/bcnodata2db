@@ -24,6 +24,7 @@ import qualified Data.Set                    as S
 import           Data.String
 import           Data.Text                   (Text)
 import qualified Data.Text                   as T
+import           Data.Time.LocalTime
 import           Database.Persist
 import           Database.Persist.Postgresql
 import           Network                     (withSocketsDo)
@@ -36,6 +37,14 @@ import           Text.XML.Lens
 -- |
 -- = OData collection folds
 
+data MetaInfo
+  = MetaInfo { origen        :: Maybe Text -- Institution that generated the
+                                           -- data set
+             , transformacio :: Maybe Text
+             , url1          :: Maybe Text
+             , url2          :: Maybe Text
+             }
+
 data AnyCollection
   = forall r. (PersistEntity r, PersistEntityBackend r ~ SqlBackend)
     =>
@@ -46,6 +55,7 @@ data AnyCollection
 collections ::
   [
     ( String                    -- URL suffix
+    , MetaInfo
     , Maybe Text                -- Property that needs to be present
     , Maybe Text                -- Value that preceding property needs to take
     , AnyCollection             -- Means to get all resources of a collection
@@ -55,6 +65,9 @@ collections =
   [
     (
       "OPENDATADIVTER0",
+      MetaInfo Nothing Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/SECTOR_PUBLIC/tauladivadmnou/")
+        (Just "http://w20.bcn.cat/cartobcn/"),
       Just "categoria_divisio", Just "Districte",
       MkAC (
         Districtes
@@ -68,6 +81,9 @@ collections =
     )
   , (
       "OPENDATADIVTER0",
+      MetaInfo Nothing Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/SECTOR_PUBLIC/tauladivadmnou/")
+        (Just "http://w20.bcn.cat/cartobcn/"),
       Just "categoria_divisio", Just "Barri",
       MkAC (
         Barris
@@ -84,6 +100,11 @@ collections =
       [ Barris 0 "BARRI NO ASSIGNAT" Nothing Nothing ] []
     )
   , ( "OPENDATAIMMIGRACIOSEXE2013",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -102,6 +123,11 @@ collections =
       [] []
     )
   , ( "OPENDATAIMMIGRACIOSEXE2012",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -120,6 +146,11 @@ collections =
       [] []
     )
   , ( "immigraciosexe2011",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -138,6 +169,11 @@ collections =
       [] []
     )
   , ( "immigraciosexe2010",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -156,6 +192,11 @@ collections =
       [] []
     )
   , ( "immigraciosexe2009",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -174,6 +215,11 @@ collections =
       [] []
     )
   , ( "immigraciosexe2008",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -192,6 +238,11 @@ collections =
       [] []
     )
   , ( "immigraciosexe2007",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/imi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -210,6 +261,11 @@ collections =
       [] []
     )
   , ( "OPENDATAEMIGRACIOSEXE2013",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -228,6 +284,11 @@ collections =
       [] []
     )
   , ( "OPENDATAEMIGRACIOSEXE2012",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -246,6 +307,11 @@ collections =
       [] []
     )
   , ( "emigraciosexe2011",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -264,6 +330,11 @@ collections =
       [] []
     )
   , ( "emigraciosexe2010",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -282,6 +353,11 @@ collections =
       [] []
     )
   , ( "emigraciosexe2009",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -300,6 +376,11 @@ collections =
       [] []
     )
   , ( "emigraciosexe2008",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -318,6 +399,11 @@ collections =
       [] []
     )
   , ( "emigraciosexe2007",
+      MetaInfo
+        (Just "Departament d'Estadística. Ajuntament de Barcelona")
+        Nothing
+        (Just "http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/")
+        (Just "http://www.bcn.es/estadistica/catala/dades/barris/tdemo/emi/index.htm"),
       Just "barris", Nothing,
       MkAC (
         MigrantsPerSexe
@@ -408,34 +494,44 @@ helpMessage =
 
 main :: IO ()
 main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
-  runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
-    liftIO $ flip runSqlPersistMPool pool $ do
-      runMigration migrateAll
-      -- Delete (usually all) table rows before inserting.
-      -- Delete in reverse order due to foreign key dependencies.
-      mapM_ deleteAll $ reverse collections
-      mapM_ insertAll collections
+  handle someExp $ do
+    runStderrLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
+      liftIO $ flip runSqlPersistMPool pool $ do
+        runMigration migrateAll
+        -- Delete (usually all) table rows before inserting.
+        -- Delete in reverse order due to foreign key dependencies.
+        mapM_ deleteAll $ reverse collections
+        mapM_ insertAll collections
+    return ()
   return ()
-    where
-      insertAll, deleteAll :: (MonadBaseControl IO m, MonadLogger m, MonadIO m)
-                =>
-                ( String
-                , Maybe Text
-                , Maybe Text
-                , AnyCollection )
-                -> ReaderT SqlBackend m ()
-      insertAll (docName, prop, val, MkAC fold moreResources _) = do
-        doc <- liftIO $ readDocument docName
-        let resources = doc ^.. filteringTraversal prop val . runFold fold
-        insertMany_ $ resources ++ moreResources
-      deleteAll (_, _, _, MkAC _ _ deleteFilter) = deleteWhere deleteFilter
-      filteringTraversal Nothing _         = memberResources
-      filteringTraversal (Just p) Nothing  = memberResourcesWithSome p
-      filteringTraversal (Just p) (Just v) = memberResourcesWith p v
-      options' = info (helper <*> options) helpMessage
-      pqConnOpts d u p = B8.pack $ concat [d, u, p]
-      non2xxStatusExp :: HttpException -> IO ()
-      non2xxStatusExp e = putStr "Caught " >> print e
+  where
+    -- insertAll also updates meta-info tables
+    insertAll, deleteAll :: (MonadBaseControl IO m, MonadLogger m, MonadIO m)
+      => ( String, MetaInfo, Maybe Text, Maybe Text, AnyCollection )
+      -> ReaderT SqlBackend m ()
+    insertAll (docName, meta, prop, val, MkAC fold moreResources _) = do
+      let font' = odataBaseUrl ++ docName
+      doc <- liftIO $ readDocument font'
+      let resources = doc ^.. filteringTraversal prop val . runFold fold
+      insertMany_ $ resources ++ moreResources
+      let MetaInfo o t u1 u2 = meta
+      let taula' = tableName (head resources) -- Works even with empty list!!
+      let taula_i_font' = T.concat [taula', " <= ", T.pack font']
+      zonedTime <- liftIO getZonedTime
+      let now = zonedTimeToUTC zonedTime
+      _ <- upsert (FontsDeDades taula_i_font' "OData-XML" now o t u1 u2) []
+      return ()
+    deleteAll (_, _, _, _, MkAC _ _ deleteFilter) = deleteWhere deleteFilter
+    filteringTraversal Nothing _         = memberResources
+    filteringTraversal (Just p) Nothing  = memberResourcesWithSome p
+    filteringTraversal (Just p) (Just v) = memberResourcesWith p v
+    options' = info (helper <*> options) helpMessage
+    pqConnOpts d u p = B8.pack $ concat [d, u, p]
+    non2xxStatusExp :: HttpException -> IO ()
+    non2xxStatusExp e = put2Ln >> putStr "Caught " >> print e >> put2Ln
+    someExp :: (MonadIO m, MonadCatch m) => SomeException -> m ()
+    someExp e = liftIO (put2Ln >> putStr "Caught " >> print e >> put2Ln)
+    put2Ln = putStrLn "" >> putStrLn ""
 
 -- | Traversal of an OData resource collection (an XML Document) focusing on all
 -- member resources (i.e. database rows). (Follow terminology found in
@@ -497,8 +593,8 @@ propText propName = to (findOf elemAndText hasPropName) . to (fmap snd)
     elemAndText = plate . runFold ((,) <$> Fold (to id) <*> Fold text)
 
 readDocument :: String -> IO Document
-readDocument docName = withSocketsDo $ do
-  result <- simpleHttp (odataBaseUrl ++ docName)
+readDocument url = withSocketsDo $ do
+  result <- simpleHttp url
   return $ parseLBS_ def result
 
 odataBaseUrl :: String

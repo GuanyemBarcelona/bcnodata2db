@@ -39,6 +39,7 @@ executable bcnodata2db
                , persistent-postgresql
                , persistent-template
                , text >=1.1 && <1.2
+               , time
                , transformers >= 0.3.0.0
                , xml-conduit
                , xml-lens

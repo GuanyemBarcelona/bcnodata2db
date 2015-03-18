@@ -12,6 +12,7 @@
 module BcnOData.Persistent where
 
 import           Data.Text                   (Text)
+import           Data.Time.Clock
 import           Database.Persist.TH
 
 
@@ -27,16 +28,18 @@ share
   ]
   [persistLowerCase|
     FontsDeDades
-      font          Text        -- Usually a URL, or simply an id string
-      tipus         Text        -- E.g. "OData-XML"
-      taula         Text        -- Where the data is stored
-      origen        Text        -- Institution that generated the data set
-      transformacio Text Maybe
-      url1          Text Maybe  -- Pointer to metainfo with, e.g, a description
-                                -- of every field
-      url2          Text Maybe
-      url3          Text Maybe
-      Primary font
+      taula_i_font       Text        -- Where the data is stored ++ its source,
+                                     -- usually a URL
+      tipus              Text        -- E.g. "OData-XML"
+      darrera_descarrega UTCTime     -- SQL type: DATE
+      origen             Text Maybe  -- Institution that generated the data set
+      transformacio      Text Maybe
+      url1               Text Maybe  -- Pointer to metainfo with, e.g, a
+                                     -- description of every field
+      url2               Text Maybe
+      UniqueTaulaIFont taula_i_font  -- Cannot simply create a composite key
+                                     -- with this as repsert fails and need to
+                                     -- use upsert
 
     Districtes
       codi_districte        Int
@@ -55,9 +58,6 @@ share
       Foreign Districtes fkey codi_districte
       deriving Show
 
-    -- http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/emigracio-sexe/
-    -- http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/immigracio-sexe/
-    -- http://www.bcn.cat/estadistica/catala/dades/barris/tdemo/index.htm
     MigrantsPerSexe
       codi_barri       Int
       any_             Int
