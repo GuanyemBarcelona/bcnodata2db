@@ -531,42 +531,44 @@ handleBarriNoConsta b                  = b
 -- |
 -- = Command line options
 
---data Options = Options { command :: Command }
-
---data Command = List | Get GetOptions
-
--- data GetOptions
---   = GetOptions
 data Options
   = Options
-    { dbname   :: String
-    , user     :: String
-    , password :: String
+    { dbname             :: String
+    , user               :: String
+    , password           :: String
+    , usersToGrantAccess :: [String]
     }
 
 options :: Parser Options
 options = Options
   <$> option (str >>= param "dbname")
-        ( long "dbname"
-          <> short 'd'
-          <> metavar "DB"
-          <> help "Passes parameter dbname=DB to database connection"
-          <> value ""
-        )
+  ( long "dbname"
+    <> short 'd'
+    <> metavar "DB"
+    <> help "Passes parameter dbname=DB to database connection"
+    <> value ""
+  )
   <*> option (str >>= param "user")
-        ( long "username"
-          <> short 'u'
-          <> metavar "USER"
-          <> help "Passes parameter user=USER to database connection"
-          <> value ""
-        )
+  ( long "username"
+    <> short 'u'
+    <> metavar "USER"
+    <> help "Passes parameter user=USER to database connection"
+    <> value ""
+  )
   <*> option (str >>= param "password")
-        ( long "password"
-          <> short 'p'
-          <> metavar "PASSWD"
-          <> help "Passes param. password=PASSWD to database connection"
-          <> value ""
-        )
+  ( long "password"
+    <> short 'p'
+    <> metavar "PASSWD"
+    <> help "Passes param. password=PASSWD to database connection"
+    <> value ""
+  )
+  <*> option (liftM (fmap T.unpack . T.splitOn "," . T.pack) str)
+  ( long "grant-access-to"
+    <> short 'g'
+    <> metavar "USERS"
+    <> help "Comma-separated list of DB users to grant access privileges"
+    <> value []
+  )
   where
     param _ "" = return ""
     param p s  = return $ p ++ "=" ++ s ++ " "
@@ -582,40 +584,50 @@ helpMessage =
 -- = Entry point and auxiliary functions
 
 main :: IO ()
-main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
+main = execParser options' >>= \(Options d u p g) -> handle non2xxStatusExp $ do
     runNoLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
       liftIO $ flip runSqlPersistMPool pool $ do
         runMigration migrateAll
+        forM_ g $ \user_ ->
+          handleAll (expWhen ("granting access privileges for user " ++ user_)) $
+            grantAccess "fonts_de_dades" user_
         -- Delete (usually all) table rows before inserting.
         -- Delete in reverse order due to foreign key dependencies.
         liftIO $ putStrLn "Deleting rows"
         mapM_ deleteAll $ reverse collections
-        mapM_ insertAll collections
+        mapM_ (insertAll g) collections
     return ()
   where
-    -- insertAll also updates meta-info tables
+    -- insertAll also updates meta-info tables and access privileges for users
+    -- in `g'
     insertAll :: (MonadBaseControl IO m, MonadLogger m, MonadIO m, MonadCatch m)
-                 => ( String, MetaInfo, Maybe Text, Maybe Text, AnyCollection )
+                 =>
+                 [String]
+              -> (String, MetaInfo, Maybe Text, Maybe Text, AnyCollection)
               -> ReaderT SqlBackend m ()
-    insertAll (docName, meta, prop, val, MkAC fold moreResources _) = do
-      let font' = odataBaseUrl ++ docName
-      doc <- liftIO $ readDocument font'
+    insertAll users (docName, meta, prop, val, MkAC fold moreResources _) = do
+      let font_ = odataBaseUrl ++ docName
+      doc <- liftIO $ readDocument font_
       let resources = doc ^.. filteringTraversal prop val . runFold fold
       -- Works even with empty list!!
-      let taula' = T.filter (/='"') $ tableName $ head resources
-      liftIO $ putStr "Inserting to " >> putStr (show taula') >> putStr " "
+      let taula_ = T.filter (/='"') $ tableName $ head resources
+      liftIO $ putStr "Inserting to " >> putStr (show taula_) >> putStr " "
       handleAll (expWhen "inserting resources") $ do
         keys <- insertMany $ resources ++ moreResources
         liftIO $ putStr (show (length keys)) >> putStrLn " rows"
       let MetaInfo o t u1 u2 = meta
-      let taula_i_font' = T.concat [taula', " <= ", T.pack font']
+      let taula_i_font_ = T.concat [taula_, " <= ", T.pack font_]
       zonedTime <- liftIO getZonedTime
       let now = zonedTimeToUTC zonedTime
       handleAll (expWhen "inserting meta info data") $ do
-        _ <- upsert (FontsDeDades taula_i_font' "OData-XML" now o t u1 u2) []
+        _ <- upsert (FontsDeDades taula_i_font_ "OData-XML" now o t u1 u2) []
         return ()
+      forM_ users $ \user_ ->
+        handleAll (expWhen ("granting access privileges for user " ++ user_)) $
+          grantAccess taula_ user_
     deleteAll :: (MonadBaseControl IO m, MonadLogger m, MonadIO m, MonadCatch m)
-                 => ( String, MetaInfo, Maybe Text, Maybe Text, AnyCollection )
+                 =>
+                 (String, MetaInfo, Maybe Text, Maybe Text, AnyCollection)
               -> ReaderT SqlBackend m ()
     deleteAll (_, _, _, _, MkAC _ _ deleteFilter) =
       handleAll (expWhen "deleting resources") $ deleteWhere deleteFilter
@@ -631,6 +643,13 @@ main = execParser options' >>= \(Options d u p) -> handle non2xxStatusExp $ do
       liftIO $ put2Ln >> putStr "Caught when " >> putStr msg >> putStr " :"
       liftIO $ print e >> put2Ln
     put2Ln = putStrLn "" >> putStrLn ""
+
+grantAccess :: (MonadBaseControl IO m, MonadLogger m, MonadIO m)
+               =>
+               Text -> String -> ReaderT SqlBackend m ()
+grantAccess t u = rawExecute (T.concat ["GRANT SELECT ON ", t," TO ", u']) []
+  where
+    u' = T.pack u
 
 -- | Traversal of an OData resource collection (an XML Document) focusing on all
 -- member resources (i.e. database rows). (Follow terminology found in
