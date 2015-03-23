@@ -1,21 +1,22 @@
-{-# LANGUAGE FlexibleContexts      #-}
-{-# LANGUAGE GADTs                 #-}
-{-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE OverloadedStrings     #-}
-{-# LANGUAGE RankNTypes            #-}
-{-# LANGUAGE ScopedTypeVariables   #-}
-{-# LANGUAGE TypeFamilies          #-}
+{-# LANGUAGE ExistentialQuantification #-}
+{-# LANGUAGE FlexibleContexts          #-}
+{-# LANGUAGE GADTs                     #-}
+{-# LANGUAGE MultiParamTypeClasses     #-}
+{-# LANGUAGE OverloadedStrings         #-}
+{-# LANGUAGE RankNTypes                #-}
+{-# LANGUAGE ScopedTypeVariables       #-}
+{-# LANGUAGE TypeFamilies              #-}
 module Main where
 
-import Control.Monad.Trans.Reader
 import           BcnOData.Persistent
 import           Control.Applicative
 import           Control.Lens
 import           Control.Monad
 import           Control.Monad.Catch
-import           Control.Monad.IO.Class      (liftIO, MonadIO)
+import           Control.Monad.IO.Class      (MonadIO, liftIO)
 import           Control.Monad.Logger
 import           Control.Monad.Trans.Control
+import           Control.Monad.Trans.Reader
 import qualified Data.ByteString.Char8       as B8 (pack)
 import           Data.Char
 import qualified Data.Map.Strict             as M
@@ -580,10 +581,15 @@ helpMessage =
   <> header "bcnodata2db - Relational-ize OData from http://opendata.bcn.cat"
 
 
--- | = Entry point and auxiliary functions. All SQL commands are run in a single
--- transaction. This has some advantages (performance, if something fails no
--- data is destroyed) and one big drawback: if a collection gets broken, we
--- can't update the other collections.
+-- | = Entry point and auxiliary functions.
+
+-- | Entry point. All SQL commands are run in a single transaction. This has
+-- some advantages (performance, if something fails no data is destroyed) and
+-- one big drawback: if a collection gets broken, we can't update the other
+-- collections.
+
+-- To change the aforementioned behavior see
+-- Database.Persistent.SQLtransactionSave
 main :: IO ()
 main = execParser options' >>= \(Options d u p g) -> handle non2xxStatusExp $ do
     runNoLoggingT $ withPostgresqlPool (pqConnOpts d u p) 10 $ \pool ->
